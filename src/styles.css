@@ -1,1 +1,126 @@
 /* You can add global styles to this file, and also import other style files */
+
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* font-family: BwModelica-Regular; */
+    padding: 0%;
+    margin: 0%;
+}
+
+body{
+    background-color: rgb(255, 255, 255);
+    /* text-align: justify; */
+}
+
+.landingBody{
+    background-color: rgb(179, 248, 225);
+}
+
+.landingBody a{
+    border: 2px solid red;
+    text-align: center;
+    margin: 100px;
+    padding: 50px;
+}
+
+.header{
+    text-align: center;
+    padding: 25px;
+    margin: 5px;
+    background-color: white;
+}
+.topnav{
+    background-color: rgb(218, 163, 45);
+}
+.topnav>ul{
+    /* border: 1px solid green; */
+    padding: 20px 0px 20px 20px;
+    overflow: hidden;
+}
+.topnav>ul>li{
+    display: inline;
+    margin-left: 30px;
+    line-height: 50px;
+}
+.topnav>ul>li>a{
+    color: white;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+.main{
+    padding: 5px;
+}
+.card{
+    background-color: white;
+    padding: 20px 10px;
+    margin: 10px 0px;
+}
+.card>p{
+    margin-bottom: 20px;
+}
+.cc{
+    display: inline-block;
+    text-align: center;
+    margin: 20px 25px;
+}
+.container{
+    /* border: 1px solid red; */
+    margin: 20px auto;
+    width: 350px;
+}
+.container>label{
+    /* border: 1px solid green; */
+    line-height: 35px;
+}
+.container>input{
+    width: 328px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid lightgrey;
+}
+.container>button{
+    width: 350px;
+    height: 45px;
+    margin-bottom: 5px;
+    background-color: darkblue;
+    border: none;
+    color: white;
+}
+.container>label>input{
+    margin-left: 10px;
+}
+
+.cancelbtn{
+    background-color: red !important;
+    width: 70px  !important;
+    height: 40px  !important;
+    margin: 20px 120px 20px 20px !important;
+}
+
+div .imgrow{
+    width: auto;
+    height: 250px;
+    padding: 10px 30px;
+    
+}
+
+/* a{
+    text-decoration: none;
+} */
+
+div .content a{
+    text-decoration: none;
+}
+
+div .content p img{
+    height: 15px;
+    width: 15px;
+}
+
+
+.footer{
+    text-align: center;
+    padding: 25px;
+    background-color: lightgray;
+    margin: 10px;
+}
