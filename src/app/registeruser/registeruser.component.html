@@ -1,9 +1,10 @@
 <div class="container">
     <h2>Welcome to our User Registration Page !</h2>
-    <h3>We are delighted to have you on our platform &#10084;</h3>
+    <h3>We are delighted to have you on our platform <angular-emojis [name]="'smile'" size="25"></angular-emojis></h3>
     <form #regForm="ngForm" (ngSubmit)="regForm.valid && process()">
 
       <div class="form-group">
+        <br>
         <label for="username">Please Enter Your Name: </label><span style="color:red;"> *</span>
         <input [(ngModel)]=userObj.userName
           class="form-control" 
@@ -82,11 +83,11 @@
           <div *ngIf="dob.errors?.required"><i>! DOB is required</i></div>
         </div>  
       </div>
-
-      <button type="submit" class="btn btn-success">Register Now</button>
+      <br>
+      <button type="submit" class="btn btn-success">Register Now !</button>
 
     
     </form>
     <br><br>
-    <p style="text-align:center;">Created with &hearts; using HéxisEngine</p>
+    <p style="text-align:center;">Created with <angular-emojis [name]="'heart'" size="15"></angular-emojis> using HéxisEngine</p>
   </div>  

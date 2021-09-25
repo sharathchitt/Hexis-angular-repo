@@ -6,6 +6,9 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RegisteruserComponent } from './registeruser/registeruser.component';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { ForgotpassComponent } from './forgotpass/forgotpass.component';
+import { AngularEmojisModule } from 'angular-emojis';
 
 
 @NgModule({
@@ -13,12 +16,15 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     LandingPageComponent,
     RegisteruserComponent,
+    LoginComponent,
+    ForgotpassComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    AngularEmojisModule
   ],
   providers: [],
   bootstrap: [AppComponent]
