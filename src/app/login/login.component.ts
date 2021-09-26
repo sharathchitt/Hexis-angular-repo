@@ -13,7 +13,8 @@ export class LoginComponent implements OnInit {
   constructor() { }
 
   process(){
-    alert('User Sucessfully logged in !');
+    
+    alert('User Sucessfully logged in !'+'\n'+JSON.stringify(this.userObj));
   }
 
   ngOnInit(): void {

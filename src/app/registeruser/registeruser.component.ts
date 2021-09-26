@@ -13,7 +13,7 @@ export class RegisteruserComponent implements OnInit {
   constructor() { }
 
   process(){
-    alert('User Sucessfully Registered !');
+    alert('User Sucessfully Registered !\n'+JSON.stringify(this.userObj));
   }
 
   ngOnInit(): void {
