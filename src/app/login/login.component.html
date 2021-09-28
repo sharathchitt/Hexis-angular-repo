@@ -28,9 +28,11 @@
           id="userpass"
           name="t4"
           required
+          pattern="[a-z0-9A-Z]"
           #pass="ngModel" />
         <div *ngIf="regForm.submitted && pass.invalid && (pass.dirty || pass.touched)" class="alert alert-danger">
           <div *ngIf="pass.errors?.required"><i>! Password is required</i></div>
+          <div *ngIf="pass.errors?.pattern">Password can contain only AlphaNumerics</div>
         </div>  
       </div>
 

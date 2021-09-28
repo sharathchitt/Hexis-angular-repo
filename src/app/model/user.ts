@@ -4,4 +4,9 @@ export class User{
     userEmail: string;
     userPassword: string;
     dateOfBirth: string;
+    userCity: string;
+    userMobile: string;
+    userQualification: string;
+    userState: string;
+    userYOC: string;
 }

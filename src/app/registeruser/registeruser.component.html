@@ -64,9 +64,11 @@
           id="userpass"
           name="t4"
           required
+          pattern="[a-z0-9A-Z]"
           #pass="ngModel" />
         <div *ngIf="regForm.submitted && pass.invalid && (pass.dirty || pass.touched)" class="alert alert-danger">
           <div *ngIf="pass.errors?.required"><i>! Password is required</i></div>
+          <div *ngIf="pass.errors?.pattern">Password can contain only AlphaNumerics</div>
         </div>  
       </div>
 
@@ -83,10 +85,62 @@
           <div *ngIf="dob.errors?.required"><i>! DOB is required</i></div>
         </div>  
       </div>
-      <br>
-      <button type="submit" class="btn btn-success">Register Now !</button>
+      
+      <div class="form-group">
+        <label for="usercity">Enter your city:</label>
+        <input [(ngModel)]=userObj.userCity
+          type="text"
+          id="usercity"
+          name="t6"
+          class="form-control"
+          #city="ngModel" />
+      </div>
 
+      <div class="form-group">
+        <label for="usermob">Enter your Mobile Number:</label>
+        <input [(ngModel)]=userObj.userMobile
+          type="text"
+          id="usermob"
+          name="t7"
+          pattern="[0-9]{10,}"
+          class="form-control"
+          #city="ngModel" />
+      </div>
+
+      <div class="form-group">
+        <label for="userstate">Enter your State:</label>
+        <input [(ngModel)]=userObj.userState
+          type="text"
+          id="usermob"
+          name="t8"
+          class="form-control"
+          #city="ngModel" />
+      </div>
+
+      <div class="form-group">
+        <label for="userquali">Enter your Educational Qualification:</label>
+        <input [(ngModel)]=userObj.userQualification
+          type="text"
+          id="userquali"
+          name="t9"
+          class="form-control"
+          #city="ngModel" />
+      </div>
+
+      <div class="form-group">
+        <label for="useryoc">Enter your Year of Completion:</label>
+        <input [(ngModel)]=userObj.userYOC
+          type="text"
+          id="useryoc"
+          name="t10"
+          class="form-control"
+          #city="ngModel" />
+      </div>
     
+
+
+
+      <button type="submit" class="btn btn-success">Register Now !</button>
     </form>
     <br><br>
     <p style="text-align:center;">Created with <angular-emojis [name]="'heart'" size="15"></angular-emojis> using HéxisEngine</p>
