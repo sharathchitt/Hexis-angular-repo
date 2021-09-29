@@ -33,27 +33,33 @@ body{
     float: right;
 }
 .topnav{
-    background-color: rgb(206, 141, 142);
+    background-color: rgb(226, 222, 158);
 }
 .topnav>ul{
     /* border: 1px solid green; */
-    padding: 20px 0px 20px 20px;
+    padding: 35px 0px 40px 20px;
     overflow: hidden;
+    margin-left: 70%;
+    /* display: inline-block; */
 }
 .topnav>ul>li{
     display: inline;
     margin-left: 30px;
     line-height: 50px;
+    
 }
 .topnav>ul>li>a{
     color: white;
     text-decoration: none;
     letter-spacing: 1px;
     font-size: 19px;
+    color: brown;
+    
 }
 .hexislogo{
-    width: 15%;
-    height: 15%;
+    width: 14%;
+    height: 14%;
+    float: left;
 }
 .main{
     padding: 5px;

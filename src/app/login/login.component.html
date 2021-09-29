@@ -5,7 +5,7 @@
       <div class="form-group">
         <br>
         <label for="useremail">Enter your Email ID: </label> <span style="color:red;"> *</span>
-        <input [(ngModel)]=userObj.userEmail
+        <input [(ngModel)]=userObj.email
           type="email"
           class="form-control"
           id="useremail"
@@ -22,13 +22,13 @@
 
       <div class="form-group">
         <label for="userpass">Enter your Password: </label> <span style="color:red;"> *</span>
-        <input [(ngModel)]=userObj.userPassword 
+        <input [(ngModel)]=userObj.password 
           type="password"
           class="form-control"
           id="userpass"
           name="t4"
           required
-          pattern="[a-z0-9A-Z]"
+          
           #pass="ngModel" />
         <div *ngIf="regForm.submitted && pass.invalid && (pass.dirty || pass.touched)" class="alert alert-danger">
           <div *ngIf="pass.errors?.required"><i>! Password is required</i></div>

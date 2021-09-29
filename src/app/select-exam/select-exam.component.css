@@ -1,0 +1,166 @@
+/* @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" ); */
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css");
+
+.container {
+    display: flex;
+    justify-content: center;
+    /* flex-direction: row; */
+    margin-left: 210px;    
+    margin-top: 50px; 
+    font-family:  Varela Round;
+  }  
+
+  .card-body{
+         
+    background-color:rgb(43, 32, 32);    
+    margin:10px;
+    padding:5px;
+    font :'Varela Round';
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: xx-large;    
+}
+
+.card{
+    color: rgb(14, 10, 19);
+    width: fit-content;
+    height: fit-content;
+    background-color:whitesmoke;
+    display:inline-block;
+    padding:20px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    font :Varela Round;
+    border-radius: 10px;
+    box-shadow: 10px 10px rgba(37, 36, 36, 0.3);
+    
+}
+
+#Main-Container{
+  margin: 0;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%) ;
+ 
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 2;
+    min-width: 350px;
+    font-family :Varela Round;
+  }
+  table tr th,
+  table tr td {
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    padding: 10px;
+    font-family :Varela Round;
+  }
+  table tr th:first-child,
+  table tr td:first-child {
+    border-left: 1px solid white;
+    font-family :Varela Round;
+  }
+  table tr th {
+    background: #eee;
+    border-top: 1px solid white;
+    text-align: left;
+    font-family :Varela Round;
+  }
+  
+  /* top-left border-radius */
+  table tr:first-child th:first-child {
+    border-top-left-radius: 6px;
+    font-family :Varela Round;
+  }
+  
+  /* top-right border-radius */
+  table tr:first-child th:last-child {
+    border-top-right-radius: 6px;
+    font-family :Varela Round;
+  }
+  
+  /* bottom-left border-radius */
+  table tr:last-child td:first-child {
+    border-bottom-left-radius: 6px;
+    font-family :Varela Round;
+  }
+  
+  /* bottom-right border-radius */
+  table tr:last-child td:last-child {
+    border-bottom-right-radius: 6px;
+    font-family :Varela Round;
+  }
+
+  tr{
+      text-align: center;      
+        height: 50px;
+        vertical-align: bottom;        
+  }
+  .grid {
+    margin-right: 500px;
+    text-align:left;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Create 2 columns and auto-place rows */
+}
+  
+
+
+
+
+
+div.clear
+{
+    clear: both;
+}
+
+    div.product-chooser.disabled div.product-chooser-item
+	{
+		zoom: 1;
+		filter: alpha(opacity=60);
+		opacity: 0.6;
+		cursor: default;
+	}
+
+	div.product-chooser div.product-chooser-item{
+		padding: 11px;
+		border-radius: 6px;
+		cursor: pointer;
+		position: relative;
+		border: 1px solid #efefef;
+		margin-bottom: 10px;
+        margin-left: 10px;
+        margin-right: 10x;
+	}
+	
+	div.product-chooser div.product-chooser-item.selected{
+		border: 4px solid #428bca;
+		background: #efefef;
+		padding: 8px;
+		filter: alpha(opacity=100);
+		opacity: 1;
+	}
+	
+		div.product-chooser div.product-chooser-item img{
+			padding: 0;
+		}
+		
+		div.product-chooser div.product-chooser-item span.title{
+			display: block;
+			margin: 10px 0 5px 0;
+			font-weight: bold;
+			font-size: 12px;
+		}
+		
+
+		
+		div.product-chooser div.product-chooser-item input{
+			position: absolute;
+			left: 0;
+			top: 0;
+			visibility:hidden;
+		}
+

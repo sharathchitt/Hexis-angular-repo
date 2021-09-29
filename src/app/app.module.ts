@@ -9,6 +9,13 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { AngularEmojisModule } from 'angular-emojis';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { UserService } from './user.service';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { ViewProfileComponent } from './view-profile/view-profile.component';
+import { SelectExamComponent } from './select-exam/select-exam.component';
+
 
 
 @NgModule({
@@ -18,15 +25,22 @@ import { AngularEmojisModule } from 'angular-emojis';
     RegisteruserComponent,
     LoginComponent,
     ForgotpassComponent,
+    UserDashboardComponent,
+    ViewProfileComponent,
+    SelectExamComponent
+    
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    AngularEmojisModule
+    AngularEmojisModule,
+    RouterModule,
+    HttpClientModule,
+    RouterModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,12 +1,13 @@
 <div class="container">
     <h2>Welcome to our User Registration Page !</h2>
     <h3>We are delighted to have you on our platform <angular-emojis [name]="'smile'" size="25"></angular-emojis></h3>
+    <p style="margin-left: 82%;">Already Registered ? <a [routerLink]="['/loginLink']">Click Here</a></p>
     <form #regForm="ngForm" (ngSubmit)="regForm.valid && process()">
 
       <div class="form-group">
         <br>
         <label for="username">Please Enter Your Name: </label><span style="color:red;"> *</span>
-        <input [(ngModel)]=userObj.userName
+        <input [(ngModel)]=userObj.fullName
           class="form-control" 
           type="text" 
           id="username" 
@@ -22,27 +23,10 @@
         </div>  
       </div>
       
-      
-      <div class="form-group" *ngIf="false">
-        <label for="userid">Enter User ID: </label><span style="color:red;"> *</span>
-        <input [(ngModel)]=userObj.userId
-          class="form-control" 
-          type="number" 
-          id="empid" 
-          name="t2"
-          min=1001
-          max=9999
-          required
-          #userid="ngModel" />
-        <div *ngIf="regForm.submitted && userid.invalid && (userid.dirty || userid.touched)" class="alert alert-danger">
-          <div *ngIf="userid.errors?.min || userid.errors?.max">Should be between 1001 and 9999 !</div>
-          <div *ngIf="userid.errors?.required"><i>! Valid User ID required</i></div>
-        </div>
-      </div>
 
       <div class="form-group">
         <label for="useremail">Enter your Email ID: </label> <span style="color:red;"> *</span>
-        <input [(ngModel)]=userObj.userEmail
+        <input [(ngModel)]=userObj.email
           type="email"
           class="form-control"
           id="useremail"
@@ -58,22 +42,22 @@
 
       <div class="form-group">
         <label for="userpass">Enter your Password: </label> <span style="color:red;"> *</span>
-        <input [(ngModel)]=userObj.userPassword 
+        <input [(ngModel)]=userObj.password 
           type="password"
           class="form-control"
           id="userpass"
           name="t4"
           required
-          pattern="[a-z0-9A-Z]"
+          
           #pass="ngModel" />
         <div *ngIf="regForm.submitted && pass.invalid && (pass.dirty || pass.touched)" class="alert alert-danger">
           <div *ngIf="pass.errors?.required"><i>! Password is required</i></div>
-          <div *ngIf="pass.errors?.pattern">Password can contain only AlphaNumerics</div>
+          
         </div>  
       </div>
 
       <div class="form-group">
-        <label for="userdob">Enter your Date of Birth: </label>
+        <label for="userdob">Enter your Date of Birth: </label><span style="color:red;"> *</span>
         <input [(ngModel)]=userObj.dateOfBirth 
           type="date"
           id="userdob"
@@ -87,61 +71,89 @@
       </div>
       
       <div class="form-group">
-        <label for="usercity">Enter your city:</label>
-        <input [(ngModel)]=userObj.userCity
+        <label for="usercity">Enter your city:</label><span style="color:red;"> *</span>
+        <input [(ngModel)]=userObj.city
           type="text"
           id="usercity"
           name="t6"
+          required
           class="form-control"
           #city="ngModel" />
+          <div *ngIf="regForm.submitted && city.invalid && (city.dirty || city.touched)" class="alert alert-danger">
+            <div *ngIf="city.errors?.required"><i>! City is required</i></div>
+          </div>
       </div>
 
       <div class="form-group">
-        <label for="usermob">Enter your Mobile Number:</label>
-        <input [(ngModel)]=userObj.userMobile
+        <label for="usermob">Enter your Mobile Number:</label><span style="color:red;"> *</span>
+        <input [(ngModel)]=userObj.mobile
           type="text"
           id="usermob"
           name="t7"
-          pattern="[0-9]{10,}"
+          required
           class="form-control"
-          #city="ngModel" />
+          #mobile="ngModel" />
+          <div *ngIf="regForm.submitted && mobile.invalid && (mobile.dirty || mobile.touched)" class="alert alert-danger">
+            <div *ngIf="mobile.errors?.required"><i>! Mobile number is required</i></div>
+          </div>
       </div>
 
       <div class="form-group">
-        <label for="userstate">Enter your State:</label>
-        <input [(ngModel)]=userObj.userState
+        <label for="userstate">Enter your State:</label><span style="color:red;"> *</span>
+        <input [(ngModel)]=userObj.state
           type="text"
-          id="usermob"
+          id="userstate"
           name="t8"
+          required
           class="form-control"
-          #city="ngModel" />
+          #state="ngModel" />
+          <div *ngIf="regForm.submitted && state.invalid && (state.dirty || state.touched)" class="alert alert-danger">
+            <div *ngIf="state.errors?.required"><i>! State is required</i></div>
+          </div>
       </div>
 
       <div class="form-group">
-        <label for="userquali">Enter your Educational Qualification:</label>
-        <input [(ngModel)]=userObj.userQualification
+        <label for="userquali">Enter your Educational Qualification:</label><span style="color:red;"> *</span>
+        <input [(ngModel)]=userObj.qualification
           type="text"
           id="userquali"
           name="t9"
+          required
           class="form-control"
-          #city="ngModel" />
+          #quali="ngModel" />
+          <div *ngIf="regForm.submitted && quali.invalid && (quali.dirty || quali.touched)" class="alert alert-danger">
+            <div *ngIf="quali.errors?.required"><i>! Educational Qualification is required</i></div>
+          
+          </div>
       </div>
 
       <div class="form-group">
-        <label for="useryoc">Enter your Year of Completion:</label>
-        <input [(ngModel)]=userObj.userYOC
+        <label for="useryoc">Enter your Year of Completion:</label><span style="color:red;"> *</span>
+        <input [(ngModel)]=userObj.yearOfCompletion
           type="text"
           id="useryoc"
           name="t10"
+          required
           class="form-control"
-          #city="ngModel" />
+          #yoc="ngModel" />
+        <div *ngIf="regForm.submitted && yoc.invalid && (yoc.dirty || yoc.touched)" class="alert alert-danger">
+          <div *ngIf="yoc.errors?.required"><i>! Qualification Year is required</i></div>
+        </div>  
       </div>
     
-
-
 
       <button type="submit" class="btn btn-success">Register Now !</button>
     </form>
     <br><br>
     <p style="text-align:center;">Created with <angular-emojis [name]="'heart'" size="15"></angular-emojis> using HéxisEngine</p>
   </div>  
+
+
+  <!-- <form (ngSubmit)="process()">
+    Name : <input type="text" name="t1" [(ngModel)]=userObj.userName /> <br />
+    Date of Birth : <input type="date" name="t2" [(ngModel)]=userObj.dateOfBirth /> <br />
+    Email ID : <input type="text" name="t3" [(ngModel)]=userObj.userEmail /> <br />
+    Password : <input type="password" name="t5" [(ngModel)]=userObj.userPassword /> <br />
+    <button type="submit">Register</button>
+</form> -->
+

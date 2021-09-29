@@ -14,7 +14,7 @@ export class ForgotpassComponent implements OnInit {
 
   process()
   {
-    alert('Password reset instructions sent to: '+this.userObj.userEmail)
+    alert('Password reset instructions sent to: '+this.userObj.email)
   }
 
   ngOnInit(): void {

@@ -1,0 +1,67 @@
+
+<h1 style="text-align: center;">SELECT EXAM</h1>
+
+<div class="sublayer" style="font-family: Varela Round; text-align: center;">
+    <h3><b>INSTRUCTIONS </b></h3>
+    <ul>
+        <li>
+            Please go to the reports page and check the previous exams you have attempted.
+        </li>
+        <li>
+            If you completed the Level 1 of a particular exam then only go to higher levels
+        </li>
+    </ul>
+    <div class=card-deck>
+		<!-- First Card -->
+			<div class="card" style="border-style:solid; border-color:blueviolet">
+				<img src="assets/java.png" class="card-img-top" alt="JAVA" />
+				<div class="card-body">Java</div>
+				<input id ='jlevel1' type="radio" value='"JAVALEVEL1"' name="java_exam" [(ngModel)]=examLevel>LEVEL 1&nbsp;
+        		<input id ='jlevel2' type="radio" value='"JAVALEVEL2"' name="java_exam" [(ngModel)]=examLevel>LEVEL 2&nbsp;
+        		<input id ='jlevel3' type="radio" value='"JAVALEVEL3"' name="java_exam" [(ngModel)]=examLevel>LEVEL 3&nbsp;
+				<br><button id ='Java' type="button" class="btn btn-info" (click)='selectedExam("Java")'>Start Exam</button>
+			</div>
+		<!-- Second Card -->
+			<div class="card" style="border-style:solid; border-color:blueviolet">
+				<img src="assets/python.png" class="card-img-top" alt="PYTHON"/>
+				<div class="card-body">Python</div>
+				<input id ='plevel1' type="radio" value='"PYTHONLEVEL1"' name="python_exam" [(ngModel)]=examLevel>LEVEL 1&nbsp;
+        		<input id ='plevel2' type="radio" value='"PYTHONLEVEL2"' name="python_exam" [(ngModel)]=examLevel>LEVEL 2&nbsp;
+        		<input id ='plevel3' type="radio" value='"PYTHONLEVEL3"' name="python_exam" [(ngModel)]=examLevel>LEVEL 3&nbsp;
+				<br><button id='Python' type="button" class="btn btn-info" (click)='selectedExam("Python")'>Start Exam</button>
+			</div>
+		</div>
+		<!-- Third Card -->
+		<div class="card" style="border-style:solid; border-color:blueviolet">
+			<img src="assets/rdbms.jpg" class="card-img-top" alt="SQL"/>
+			<div class="card-body">SQL</div>
+			<input id ='qlevel1' type="radio" value='"SQLLEVEL1"' name="sql_exam" [(ngModel)]=examLevel>LEVEL 1&nbsp;
+        	<input id ='qlevel2' type="radio" value='"SQLLEVEL2"' name="sql_exam" [(ngModel)]=examLevel>LEVEL 2&nbsp;
+        	<input id ='qlevel3' type="radio" value='"SQLLEVEL3"' name="sql_exam" [(ngModel)]=examLevel>LEVEL 3&nbsp;
+			<br><button id='SQL' type="button" class="btn btn-info" (click)='selectedExam("SQL")'>Start Exam</button>
+		</div>
+	    <!-- Fourth Card -->
+		<div class="card" style="border-style:solid; border-color:blueviolet">
+			<img src="assets/Cplusplus_150x150.png" class="card-img-top"alt="c++"/>
+			<div class="card-body">C++</div>
+			<input id ='clevel1' type="radio" value='"CLEVEL1"' name="c_exam" [(ngModel)]=examLevel>LEVEL 1&nbsp;
+        	<input id ='clevel2' type="radio" value='"CLEVEL2"' name="c_exam" [(ngModel)]=examLevel>LEVEL 2&nbsp;
+        	<input id ='clevel3' type="radio" value='"CLEVEL3"' name="c_exam" [(ngModel)]=examLevel>LEVEL 3&nbsp;
+			<br><button id='C#' type="button" class="btn btn-info" (click)='selectedExam("C++")'>Start Exam</button>
+		</div>
+	</div>
+		
+	   	   
+		 
+		  
+
+
+	 
+  
+	 
+	   
+  
+   
+
+
+

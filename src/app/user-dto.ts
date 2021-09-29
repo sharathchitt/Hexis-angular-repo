@@ -1,5 +1,6 @@
-export class User{
-	userId: number;
+export class UserDto {
+
+    userId: number;
     city:string;
 	dateOfBirth:string;
 	email:string;
