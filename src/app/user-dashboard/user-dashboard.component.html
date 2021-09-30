@@ -1,7 +1,7 @@
-<header>
+<div class="dashhead" *ngIf='true'>
     <div class="left-area">
       <h2>Dashboard</h2>
-      <h4></h4>  
+      
     </div>
     <div class="sidebar">      
       <a [routerLink]="['/userDashboard/selectExamLink']"><span>Select Exams</span></a>
@@ -11,94 +11,27 @@
       <a [routerLink] ="['/loginLink']" (click)='logout'><span>Logout</span></a>
       
     </div>
-   
-</header>
+  
+    
+  </div>
+
+  
   
 <div class="welcome-msg">
     <h3>Welcome {{ user.fullName }} !</h3>
-    
+   
 </div>
-
-
-
 <router-outlet></router-outlet>
 
-       
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
   
   
   
   
   
   
-  <!-- <div>
-    <nav>
-      <ul>
-        <li ><a href="">Exams</a></li>        
-          <li><a href="" >Dashboard</a></li>
-          <li ><a href="">Profile</a></li>
-          <li ><a [routerLink] ="['/report']">View Report</a></li>
-          <li ><a href=""> About Us</a></li>
-          <li ><a href="">Log out</a></li>
-          
-      </ul>
-    </nav> -->
-    
-    
-    
-    <!-- <div style="padding-top: 20px;padding-left:30px;color:blueviolet;
-    display: inline-block;font-family :Varela Round;font-weight: bold;font-size: 50px; text-align:left;">DASHBOARD</div>
-    
-    <div style="color:blueviolet;
-    font-family :Varela Round;font-weight: bold;font-size:30 px;margin-left:35px;margin-bottom:20px">{{userName}}</div>
-    
-    
-    <div class = "main">
-    <router-outlet></router-outlet>
-    
-    
-    <hr style="border: 3px solid white;
-    border-radius: none;">
-    
-    </div> -->
-    <!-- <h3 class="subhead">UserName</h3> -->
-    
-    
-    <!-- <div *ngIf = "noExams==true" style = "text-align: center; ">
-      <article style="width: 320px; height:250px; padding: 20px; border: 1px solid #c9c9c9; border-radius: 10px;background-color: white;margin-left:auto;margin-right:auto; text-align: center">
-        <img src="../../assets/sad.png" alt="Not found" style="width:120px; height:100px; margin-top:10px" >
-        <div style="margin-top:10px">
-        <h3 style="font-family :Varela Round;font-weight:medium;font-size:20px">Looks like you haven't taken any exams yet.</h3>
-        <h4 style="font-family :Varela Round;font-weight:medium;font-size:10px">Go to the Exams page to take an exam!</h4>  
-    
-    </div>
-    
-      </article>
-      </div>
-        
-    
-    
-      <div class = "container" >
-         <div fxLayout="row wrap" fxLayoutGap="100px grid" >
-        <section style="display: flex; justify-content: space-between;"></section>
-        <div class="grid">
-        <ng-container *ngFor = "let subject of subjectList">
-          <div class="card" style="border-style:solid; border-color:blueviolet">
-            <div class="card-body">
-              <div style = "text-align:center;">
-                <h5 style="font-family :Varela Round;font-weight: bold; color:blueviolet;text-align:center;font-size: 50px;">{{subject}}</h5>
-              <br>
-               <a routerLink="/Report" (click)="ReportDetails(subject)"style="font-family :Varela Round;font-weight: bold;color:orange; text-align:center;font-size: 20px;">View latest score</a> -->
-              <!-- </div>
-              
-            </div>
-       
-          
-            <br>
-       </section> 
-      </div>  -->
   
-  
-    
-      
-    

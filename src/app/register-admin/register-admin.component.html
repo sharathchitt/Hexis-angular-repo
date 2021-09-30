@@ -1,0 +1,139 @@
+
+<div class="container" style="width: 50%;">
+    <h2>Welcome to our Admin Registration Page !</h2>
+    <p style="margin-left: 82%;">Already Registered ? <a [routerLink]="['/loginAdminLink']">Click Here</a></p>
+    <!-- <h3>We are delighted to have you on our platform <angular-emojis [name]="'smile'" size="25"></angular-emojis></h3> -->
+    <form #regForm="ngForm" (ngSubmit)="regForm.valid && process()">
+
+      <div class="form-group">
+        <br>
+        <label for="adminname">Please Enter Your Name: </label><span style="color:red;"> *</span>
+        <input [(ngModel)]=adminObj.fullName
+          class="form-control" 
+          type="text" 
+          id="adminname" 
+          name="t1"
+          required
+          minlength="2"
+          pattern="^[A-Za-zÀ-ÿ ,.'-]+$"
+          #name="ngModel" />
+        <div *ngIf="regForm.submitted && name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+          <div *ngIf="name.errors?.required"><i>! Name required</i></div>
+          <div *ngIf="name.errors?.minlength">! Name must be atleast 2 characters</div>
+          <div *ngIf="name.errors?.pattern">! Valid Name required !</div>
+        </div>  
+      </div>
+      
+      
+      <div class="form-group" *ngIf="false">
+        <label for="adminid">Enter Admin ID: </label><span style="color:red;"> *</span>
+        <input [(ngModel)]=adminObj.adminId
+          class="form-control" 
+          type="number" 
+          id="adminid" 
+          name="t2"
+          min=1001
+          max=9999
+          required
+          #userid="ngModel" />
+        <div *ngIf="regForm.submitted && userid.invalid && (userid.dirty || userid.touched)" class="alert alert-danger">
+          <div *ngIf="userid.errors?.min || userid.errors?.max">Should be between 1001 and 9999 !</div>
+          <div *ngIf="userid.errors?.required"><i>! Valid User ID required</i></div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="adminemail">Enter your Email ID: </label> <span style="color:red;"> *</span>
+        <input [(ngModel)]=adminObj.email
+          type="email"
+          class="form-control"
+          id="adminemail"
+          name="t3"
+          required
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          #em="ngModel" />
+        <div *ngIf="regForm.submitted && em.invalid && (em.dirty || em.touched)" class="alert alert-danger">
+          <div *ngIf="em.errors?.required"><i>! Email ID is required</i></div>
+          <div *ngIf="em.errors?.pattern">Please enter a Valid Email ID</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="adminpass">Enter your Password: </label> <span style="color:red;"> *</span>
+        <input [(ngModel)]=adminObj.password 
+          type="password"
+          class="form-control"
+          id="adminpass"
+          name="t4"
+          minlength="8"
+          required
+          #pass="ngModel" />
+        <div *ngIf="regForm.submitted && pass.invalid && (pass.dirty || pass.touched)" class="alert alert-danger">
+          <div *ngIf="pass.errors?.required"><i>! Password is required</i></div>
+          <div *ngIf="pass.errors?.minlength">! Password must be ataleast 8 characters</div>
+        
+        </div>  
+      </div>
+
+      <div class="form-group">
+        <label for="admindob">Enter your Date of Birth: </label>
+        <input [(ngModel)]=adminObj.adminDob
+          type="date"
+          id="admindob"
+          class="form-control"
+          name="t5"
+          required
+          #dob="ngModel" />
+        <div *ngIf="regForm.submitted && dob.invalid && (dob.dirty || dob.touched)" class="alert alert-danger">
+          <div *ngIf="dob.errors?.required"><i>! DOB is required</i></div>
+        </div>  
+      </div>
+      
+      <div class="form-group">
+        <label for="admincity">Enter your city:</label>
+        <input [(ngModel)]=adminObj.city
+          type="text"
+          id="admincity"
+          name="t6"
+          required
+          class="form-control"
+          #city="ngModel" />
+          <div *ngIf="regForm.submitted && city.invalid && (city.dirty || city.touched)" class="alert alert-danger">
+            <div *ngIf="city.errors?.required"><i>! City is required</i></div>
+          </div>
+      </div>
+
+      <div class="form-group">
+        <label for="adminstate">Enter your State:</label>
+        <input [(ngModel)]=adminObj.state
+          type="text"
+          id="adminstate"
+          name="t8"
+          required
+          class="form-control"
+          #state="ngModel" />
+          <div *ngIf="regForm.submitted && state.invalid && (state.dirty || state.touched)" class="alert alert-danger">
+            <div *ngIf="state.errors?.required"><i>! State is required</i></div>
+          </div>
+      </div>
+
+      <div class="form-group">
+        <label for="adminmob">Enter your Mobile Number:</label>
+        <input [(ngModel)]=adminObj.mobile
+          type="text"
+          id="adminmob"
+          name="t7"
+          required
+          class="form-control"
+          #mobile="ngModel" />
+          <div *ngIf="regForm.submitted && mobile.invalid && (mobile.dirty || mobile.touched)" class="alert alert-danger">
+            <div *ngIf="mobile.errors?.required"><i>! Mobile number is required</i></div>
+          </div>
+      </div>
+
+      <button type="submit" class="btn btn-success" >Register Now !</button>
+    </form>
+    <br><br>
+    <p style="text-align:center;">Created with <angular-emojis [name]="'heart'" size="15"></angular-emojis> using HéxisEngine</p> 
+  </div>  
+

@@ -1,5 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from '../model/user';
 import { UserService } from '../user.service';
 
@@ -12,7 +13,7 @@ export class RegisteruserComponent implements OnInit {
 
   userObj = new User();
 
-  constructor(private userService:UserService) { }
+  constructor(private userService:UserService, private router:Router) { }
 
   process(){
     //alert('User Sucessfully Registered !\n'+JSON.stringify(this.userObj));
@@ -28,6 +29,9 @@ export class RegisteruserComponent implements OnInit {
         alert(data.status);
       }
     })
+  
+    this.router.navigate(['loginLink']);
+  
   }
 
 

@@ -12,7 +12,7 @@ export class UserDashboardComponent implements OnInit {
   userId:number;
   examId:number;
   user:User = new User();
-  
+  istopnav:boolean=false;
   
   noExams:boolean=false;
 

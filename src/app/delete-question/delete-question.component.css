@@ -1,0 +1,25 @@
+
+
+p.solid {border-style: solid;
+    width : 50%}
+
+div.layer{
+border-style: groove;
+width : 100%;
+
+}
+
+div.sublayer{
+border-style: groove;
+width : 99%;
+
+}
+
+input[type=text] {
+width: 80%;
+padding: 12px 20px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid #ccc;
+box-sizing: border-box;
+}

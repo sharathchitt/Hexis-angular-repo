@@ -15,6 +15,14 @@ import { UserService } from './user.service';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { ViewProfileComponent } from './view-profile/view-profile.component';
 import { SelectExamComponent } from './select-exam/select-exam.component';
+import { TakeExamComponent } from './take-exam/take-exam.component';
+import { RegisterAdminComponent } from './register-admin/register-admin.component';
+import { AddQuestionComponent } from './add-question/add-question.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { DeleteQuestionComponent } from './delete-question/delete-question.component';
+import { LoginAdminComponent } from './login-admin/login-admin.component';
+import { ForgotAdminPassComponent } from './forgot-admin-pass/forgot-admin-pass.component';
+import { YourprofileComponent } from './yourprofile/yourprofile.component';
 
 
 
@@ -27,7 +35,15 @@ import { SelectExamComponent } from './select-exam/select-exam.component';
     ForgotpassComponent,
     UserDashboardComponent,
     ViewProfileComponent,
-    SelectExamComponent
+    SelectExamComponent,
+    TakeExamComponent,
+    RegisterAdminComponent,
+    AddQuestionComponent,
+    AdminDashboardComponent,
+    DeleteQuestionComponent,
+    LoginAdminComponent,
+    ForgotAdminPassComponent,
+    YourprofileComponent
     
     
   ],

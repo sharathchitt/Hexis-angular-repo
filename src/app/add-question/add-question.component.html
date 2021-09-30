@@ -1,0 +1,91 @@
+<div class="Add" style="padding-left: 200px;">
+    <br>
+    <h2>Add Question Here ! </h2>
+    
+    <div class="layer">
+        <div class="sublayer" ><br>
+        <h4>&nbsp;Please select the Technology and Level of the Question</h4> <br> 
+                <table>
+                    <tr> 
+                        &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<input id ='java' type="radio" value='JAVA' name="exam" [(ngModel)]=addQuestionDto1.examSpecialization>&nbsp; JAVA &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;   
+                        <input id ='python' type="radio" value='PYTHON' name="exam" [(ngModel)]=addQuestionDto1.examSpecialization>&nbsp; PYTHON &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                        <input id ='sql' type="radio" value='SQL' name="exam" [(ngModel)]=addQuestionDto1.examSpecialization>&nbsp; SQL &nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;  
+                        <input id ='c/c++' type="radio" value='C/C++' name="exam" [(ngModel)]=addQuestionDto1.examSpecialization>&nbsp;C/C++ &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                        <input id ='php' type="radio" value='PHP' name="exam" [(ngModel)]=addQuestionDto1.examSpecialization>&nbsp;PHP &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  
+                        <input id ='c#/.net' type="radio" value='C#/.NET' name="exam" [(ngModel)]=addQuestionDto1.examSpecialization>&nbsp;C#/.NET<br><br>
+                    </tr>
+                    <br>
+                    <tr>
+                        &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <input id ='level1' type="radio" value='LEVEL1' name="level" [(ngModel)]=addQuestionDto1.examLevel>&nbsp; LEVEL 1&nbsp;&nbsp; &nbsp;&nbsp;
+                        <input id ='level2' type="radio" value='LEVEL2' name="level" [(ngModel)]=addQuestionDto1.examLevel>&nbsp;LEVEL 2&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                        <input id ='level3' type="radio" value='LEVEL3' name="level" [(ngModel)]=addQuestionDto1.examLevel>&nbsp;LEVEL 3&nbsp;
+                    </tr>
+                </table> 
+    
+                <!-- <label for="noofquestions"></label><b>QUESTION</b><br>
+                <input type="text" placeholder="No of questions" name="noofquestions" required [(ngModel)]=noOfQuestions><br>
+             -->
+                <br>
+                <!-- Selected exam : {{addQuestionDto1.examSpecialization}} of {{addQuestionDto1.examLevel}}  <button (click) = "createSlots()">Click to Add Question</button> -->
+    
+        </div>
+        <div class="sublayer" >
+                <br>
+                <h4>&nbsp;Please enter the Question Details</h4>
+                <br>
+                <div class="form-group">
+                    &nbsp;&nbsp;<label for="question"></label><b><i>Question</i></b><br>
+                    <input type="text" placeholder="Enter the Question" id="question" name="question" class="form-control" required [(ngModel)]="addQuestionDto1.question" #name=ngModel><br>
+                    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+                     <div *ngIf="name.errors?.required"><i> This field is required</i></div>
+    
+                    </div> 
+                </div>
+                <br>
+                <div class="form-group">
+                    &nbsp;&nbsp;<label for="optionA"><b><i>Option A </i></b></label><br>
+                    <input type="text" placeholder="Enter Option A" id="optionA" name="optionA" class="form-control" required [(ngModel)]="addQuestionDto1.optionA" #optionA=ngModel><br>
+                    <div *ngIf="optionA.invalid && (optionA.dirty || optionA.touched)" class="alert alert-danger">
+                        <div *ngIf="optionA.errors?.required"><i> This field is required</i></div>
+                    </div> 
+                </div>
+                <br> 
+                <div class="form-group">
+                    &nbsp;&nbsp;<label for="optionB"><b><i>Option B </i></b></label><br>
+                    <input type="text" placeholder="Enter Option B " name="optionB" required [(ngModel)]=addQuestionDto1.optionB class="form-control" #optionB=ngModel><br>
+                    <div *ngIf="optionB.invalid && (optionB.dirty || optionB.touched)" class="alert alert-danger">
+                        <div *ngIf="optionB.errors?.required"><i> This field is required</i></div>
+                    </div> 
+                </div>
+                <br>
+                <div class="form-group">
+                    &nbsp;&nbsp;<label for="optionC"><b><i>Option C </i></b></label><br>
+                <input type="text" placeholder="Enter Option C" name="optionC" required [(ngModel)]=addQuestionDto1.optionC class="form-control" #optionC=ngModel> <br>
+                <div *ngIf="optionC.invalid && (optionC.dirty || optionC.touched)" class="alert alert-danger">
+                    <div *ngIf="optionC.errors?.required"><i> This field is required</i></div>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                &nbsp;&nbsp;<label for="optionD"><b><i>Option D </i></b></label><br>
+                <input type="text" placeholder="Enter Option D " name="optionD" required [(ngModel)]=addQuestionDto1.optionD class="form-control" #optionD=ngModel><br>
+                <div *ngIf="optionD.invalid && (optionD.dirty || optionD.touched)" class="alert alert-danger">
+                    <div *ngIf="optionD.errors?.required"><i> This field is required</i></div>
+                </div>
+            </div>
+            
+            &nbsp;&nbsp;<h4>&nbsp;Select the Correct Option</h4><br>
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<input id = 'optionA' type="radio" value="A" name=i [(ngModel)]=addQuestionDto1.answer>&nbsp;A    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;        
+                <input id = 'optionB' type="radio" value="B" name=i [(ngModel)]=addQuestionDto1.answer>&nbsp;B       &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+                <input id = 'optionC' type="radio" value="C" name=i [(ngModel)]=addQuestionDto1.answer>&nbsp;C   &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                <input id = 'optionD' type="radio" value="D" name=i [(ngModel)]=addQuestionDto1.answer>&nbsp;D<br>
+                <br>
+                &nbsp;&nbsp;&nbsp; Selected Answer : {{addQuestionDto1.answer}}
+               
+        
+        <br>
+        <br>
+        &nbsp;&nbsp;&nbsp; <button (click) = "addQuestionsToExam()" class="btn btn-primary">Submit Question</button><br><br>
+    </div>
+    </div>
+    </div>
