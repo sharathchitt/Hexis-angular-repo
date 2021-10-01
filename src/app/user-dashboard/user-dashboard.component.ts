@@ -19,6 +19,7 @@ export class UserDashboardComponent implements OnInit {
   constructor(private router: Router) {
     //this.user.fullName='Sharath';
     this.user.fullName=sessionStorage.getItem('fullName');
+    
   }
 
   logout(){

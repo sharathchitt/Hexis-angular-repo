@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CaptureResponseDto } from '../capture-response-dto';
 import { ExamInformationDto } from '../exam-information-dto';
 import { QuestionDetailsDto } from '../question-details-dto';
@@ -12,7 +13,7 @@ import { UserService } from '../user.service';
 })
 export class TakeExamComponent implements OnInit {
 
-  constructor(private service : UserService) { }
+  constructor(private service : UserService, private router:Router) { }
 
   ngOnInit(): void {
     
@@ -22,7 +23,8 @@ export class TakeExamComponent implements OnInit {
         this.examInformationDto.examLevel = sessionStorage.getItem('examLevel');
         this.examInformationDto.examSpecialization = sessionStorage.getItem('examSpec');
         this.captures.userId=JSON.parse(sessionStorage.getItem('userId'));
-        console.log(JSON.parse(sessionStorage.getItem('userId')))
+        //this.captures.userDetail.userId = JSON.parse(sessionStorage.getItem('userId'));
+        //console.log(JSON.parse(sessionStorage.getItem('userId')))
         this.service.getQuestionsForExam(this.examInformationDto).subscribe(data => 
           {
           this.questionsList = data;
@@ -92,6 +94,7 @@ export class TakeExamComponent implements OnInit {
 
  captures:CaptureResponseDto = new CaptureResponseDto();
  
+ 
 
 
   endExam(){
@@ -106,11 +109,18 @@ export class TakeExamComponent implements OnInit {
     this.service.sendResponses(this.captures)
     .subscribe(data=>{
       console.log(JSON.stringify(data));
+      
+      sessionStorage.setItem('marks', data.marks.toString());
+      sessionStorage.setItem('status', data.status);
+      //sessionStorage.setItem('capturedResponses', JSON.stringify(data));
     })  
     alert('Exam was ended !')
-    open('/userDashboard', '_self').close();
+    this.router.navigate([]).then(result => {  window.open('reportCardLink', '_self'); });
+    // this.router.navigate(['reportCardLink']);
+    //open('/userDashboard', '_self').close();
   }
 
+  
   previousQuestion()
   {
     this.i--;

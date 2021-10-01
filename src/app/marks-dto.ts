@@ -1,3 +1,4 @@
 export class MarksDto {
-    marks:number;
+    marks:string;
+    status:string;
 }

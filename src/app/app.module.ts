@@ -23,6 +23,7 @@ import { DeleteQuestionComponent } from './delete-question/delete-question.compo
 import { LoginAdminComponent } from './login-admin/login-admin.component';
 import { ForgotAdminPassComponent } from './forgot-admin-pass/forgot-admin-pass.component';
 import { YourprofileComponent } from './yourprofile/yourprofile.component';
+import { ReportCardComponent } from './report-card/report-card.component';
 
 
 
@@ -43,7 +44,8 @@ import { YourprofileComponent } from './yourprofile/yourprofile.component';
     DeleteQuestionComponent,
     LoginAdminComponent,
     ForgotAdminPassComponent,
-    YourprofileComponent
+    YourprofileComponent,
+    ReportCardComponent
     
     
   ],

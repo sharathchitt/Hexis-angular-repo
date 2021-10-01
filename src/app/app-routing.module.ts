@@ -10,6 +10,7 @@ import { LoginAdminComponent } from './login-admin/login-admin.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterAdminComponent } from './register-admin/register-admin.component';
 import { RegisteruserComponent } from './registeruser/registeruser.component';
+import { ReportCardComponent } from './report-card/report-card.component';
 import { SelectExamComponent } from './select-exam/select-exam.component';
 import { TakeExamComponent } from './take-exam/take-exam.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
@@ -77,7 +78,11 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'viewAllQuestions', component: TakeExamComponent
+    path: 'viewAllQuestions', component: TakeExamComponent,
+    
+  },
+  {
+    path: 'reportCardLink', component: ReportCardComponent
   }
 
 

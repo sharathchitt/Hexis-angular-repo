@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
         let userId = data.userId.toString();
         sessionStorage.setItem('fullName', fullName);
         sessionStorage.setItem('userId', userId);
+        
         //alert('User with the following creds logged in : \n'+data.userId+' '+data.fullName);
         this.router.navigate(['userDashboard']);
       }
