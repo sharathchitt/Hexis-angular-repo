@@ -1,7 +1,8 @@
-export class ExamInformationDto {
-    examSpecialization : String;
-	examLevel : String
-	examTime : String
-    passingMark : String
+export class ExamInformationDto  {
+
+    examSpecialization : string;
+	examLevel : string;
+	examTime : string;
+    passingMark : string;
 
 }

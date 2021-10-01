@@ -117,48 +117,50 @@
 
 <!-- <h1 style="text-align: center;margin-left: 60%;">{{user.city}}</h1> -->
 
-
-<table border="2" class="usertable">
-    <thead style="text-align: center;">
-        <th>Feild</th>
-        <th>Value</th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>User ID</td>
-            <td>{{user.userId}} </td>
-        </tr>
-        <tr>
-            <td>Full Name</td>
-            <td>{{user.fullName}} </td>
-        </tr>
-        <tr>
-            <td>Date of Birth</td>
-            <td>{{user.dateOfBirth}} </td>
-        </tr>
-        <tr>
-            <td>Email ID:</td>
-            <td>{{user.email}} </td>
-        </tr>
-        <tr>
-            <td>City</td>
-            <td>{{user.city}} </td>
-        </tr>
-        <tr>
-            <td>State</td>
-            <td>{{user.state}} </td>
-        </tr>
-        <tr>
-            <td>Mobile Number</td>
-            <td>{{user.mobile}} </td>
-        </tr>
-        <tr>
-            <td>Qualification</td>
-            <td>{{user.qualification}} </td>                
-        </tr>
-        <tr>
-            <td>YOC</td>
-            <td>{{user.yearOfCompletion}} </td>
-        </tr>
-    </tbody>
-</table>
+<div class="container" style="padding-left: 145px;">
+    <h3>Your details are as follows:</h3>
+    <table class="table" style="font-weight: 200; font-size: 17px;">
+        <!-- <thead style="text-align: center;">
+            <th>Feild</th>
+            <th>Value</th>
+        </thead> -->
+        <tbody>
+            <tr>
+                <td><b>User ID:</b> </td>
+                <td>{{user.userId}} </td>
+            </tr>
+            <tr>
+                <td><b>Full Name:</b></td>
+                <td>{{user.fullName}} </td>
+            </tr>
+            <tr>
+                <td><b>Date of Birth:</b></td>
+                <td>{{user.dateOfBirth}} </td>
+            </tr>
+            <tr>
+                <td><b>Email ID:</b></td>
+                <td>{{user.email}} </td>
+            </tr>
+            <tr>
+                <td><b>City:</b></td>
+                <td>{{user.city}} </td>
+            </tr>
+            <tr>
+                <td><b>State:</b></td>
+                <td>{{user.state}} </td>
+            </tr>
+            <tr>
+                <td><b>Mobile Number:</b></td>
+                <td>{{user.mobile}} </td>
+            </tr>
+            <tr>
+                <td><b>Qualification:</b></td>
+                <td>{{user.qualification}} </td>                
+            </tr>
+            <tr>
+                <td><b>Year of Completion:</b></td>
+                <td>{{user.yearOfCompletion}} </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

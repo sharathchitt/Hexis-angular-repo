@@ -21,7 +21,7 @@ export class SelectExamComponent implements OnInit {
     sessionStorage.setItem('examSpec',examSpec);
     sessionStorage.setItem('examLevel',this.examLevel);
     //alert(this.examLevel+' was selected');
-    this.router.navigate(['viewAllQuestions']);
+    this.router.navigate([]).then(result => {  window.open('viewAllQuestions', '_blank'); });
 
   }
 

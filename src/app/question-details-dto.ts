@@ -1,5 +1,6 @@
+
 export class QuestionDetailsDto {
-    questionid : number;
+    questionId : number;
     question : string;
     optionA : string;
     optionB : string;
@@ -7,5 +8,6 @@ export class QuestionDetailsDto {
     optionD : string;
     answer : string;
     examSpecialization : string;
-    examLevel : string;
+	examLevel : string;
+   
 }

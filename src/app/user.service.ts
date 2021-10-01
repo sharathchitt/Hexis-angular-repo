@@ -2,10 +2,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Admin } from './admin';
+import { CaptureResponseDto } from './capture-response-dto';
 import { DeleteQuestionDto } from './delete-question-dto';
 import { ExamInformationDto } from './exam-information-dto';
 import { Login } from './login';
 import { Loginstatus } from './loginstatus';
+import { MarksDto } from './marks-dto';
 import { User } from './model/user';
 import { QuestionDetailsDto } from './question-details-dto';
 import { Status } from './status';
@@ -80,9 +82,16 @@ export class UserService {
     let url = 'http://localhost:8585/searchSingleQuestion?questionId='+questionId;
     return this.http.get<QuestionDetailsDto>(url);
   }
+  
   getQuestionsForExam(examInformationDto :ExamInformationDto):Observable<QuestionDetailsDto[]>{
     let url = 'http://localhost:8585/viewAllQuestions/';
     return this.http.post<QuestionDetailsDto[]>(url,examInformationDto);
+  }
+  marks:number;
+  sendResponses(captureResponseDto: CaptureResponseDto):Observable<MarksDto>{
+    let url = 'http://localhost:8585/evaluate/';
+ 
+    return  this.http.post<MarksDto>(url, captureResponseDto);
   }
   
 
