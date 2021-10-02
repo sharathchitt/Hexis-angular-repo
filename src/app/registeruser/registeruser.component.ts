@@ -1,5 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from '../model/user';
 import { UserService } from '../user.service';
@@ -11,9 +12,13 @@ import { UserService } from '../user.service';
 })
 export class RegisteruserComponent implements OnInit {
 
+  
+
   userObj = new User();
 
   constructor(private userService:UserService, private router:Router) { }
+
+   
 
   process(){
     //alert('User Sucessfully Registered !\n'+JSON.stringify(this.userObj));

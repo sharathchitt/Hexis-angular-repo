@@ -1,37 +1,235 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css'); 
 @import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
-.sidenav {
- 
-    height: 100%;
-    width: 175px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgb(17, 17, 17);
-    overflow-x: hidden;
-    padding-top: 20px;
-  }
-  
-  .sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 18px;
-    color: #818181;
-    display: block;
-  }
-  
-  .sidenav a:hover {
-    color: #f1f1f1;
-  }
-  
-  .main {
-    margin-left: 160px; /* Same as the width of the sidenav */
-    font-size: 28px; /* Increased text to enable scrolling */
-    padding: 0px 10px;
-  }
-  
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-  }
 
+*body{
+    margin: 0;
+    padding: 0;
+    font-family:' Varela Round'
+}
+
+.dashhead{
+    position: absolute;
+    background: #22242A;
+    padding: 20px;
+    /* margin-left: 23px; */
+    /* height: 70px; */
+    width: 250px;
+    /* height: 100%; */
+
+}
+
+.left-area h2{
+    color: #fff;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.left-area h4{
+    color: #ccc;
+    margin-top: 0;
+    margin-bottom: 20px;    
+
+}
+.welcome-msg{
+    /* color: rgb(12, 12, 12); */
+    margin-top: -7px;
+    margin-bottom: 20px; 
+    margin-left: 270px; 
+    /* text-align: center; */
+    font-family: 'Varela';
+    
+}
+
+.sidebar{
+    background: #2f323a;
+    /* background: rgb(214, 219, 208); */
+    /* margin: 70px; */
+    margin-top: 15px;
+    padding-top: 30px;
+    position: absolute;
+    left: 0;
+    width: 250px;
+    height: 500px;
+    /* height: 100%; */
+    
+}
+
+.sidebar a{
+    color:#fff;
+    display: block;
+    width: 100%;
+    line-height: 60px;
+    text-decoration: none;
+    padding-left: 40px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    transition-property: background;
+}
+
+.sidebar a:hover{
+    background: #198;
+}
+
+.space p{
+    margin-top: 40%;
+}
+
+
+/* body{
+    font-family:' Varela Round';
+  
+        
+}
+ body, html {
+    height: 100%;
+    font :Varela Round;
+  }
+  
+     
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px; 
+    font-family:  Varela Round;
+  }  
+.main{
+    
+    text-align: center;
+    /* margin-top: 50px; 
+    font-family:  Varela Round;
+
+}
+   
+  
+.top{
+    text-align: right;
+    background-color: wheat;
+    font :Varela Round;
+}
+.heading{
+    text-align: left;
+}
+.subhead{
+    text-align: left;
+}
+
+   
+    .card-body{
+         
+        background-color:rgb(210, 182, 221);
+        margin:10px;
+        padding:5px;
+        font :Varela Round;
+        border-radius: 10px;
+        
+    }
+    
+    .card{
+        color: blueviolet;
+      width: 200px;
+      height: 100px;
+        background-color:rgb(210, 182, 221);
+        display:inline-block;
+        padding:20px;
+        margin-right: 50px;
+        margin-bottom: 30px;
+        font :Varela Round;
+        border-radius: 10px;
+        box-shadow: 10px 10px rgba(37, 36, 36, 0.3);
+        
+    }
+    .topnav{
+        background-color:white;
+        overflow:hidden;
+    }
+    .topnav a{
+        float:right;
+        color:orangered;
+        text-align:center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size:17px;
+    }
+    .topnav a:hover{
+        background-color:coral;
+        color:white;
+    }
+    .topnav a.active{
+        background-color:orange;
+        color:white;
+    }
+    .grid {
+        margin-left: 100px;
+        text-align:left;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr; /* Create 2 columns and auto-place rows 
+    }
+
+    button{
+        width: 110px;
+        height: 50px;
+        background-color: orange;
+             color :white;
+             padding: 10px;
+             margin: 4px 2px;
+             text-align:center;
+             display:inline-block;
+             border-radius:12px ;
+             border:none;
+             font-size: 16px;
+             font-family :Varela Round;
+             font-weight:medium;
+    
+    
+    
+    }
+    .button:hover{
+        color: white;
+        background-color: rgb(252, 192, 80);
+        
+    }
+    
+    .cen{
+        font-size: 40px;
+        font-weight: bold;
+        font-family:  Varela Round;
+    }
+    
+    form{
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    
+    .col-md-6{
+        padding-left: 0px;
+    }
+    .form-group{
+        margin-bottom: 0px;
+        padding-bottom: 10px;
+        height: 95px;
+    }
+    label{
+        font-family: " Varela Round";
+    }
+    nav{
+      
+        top:0px;
+        position: absolute;
+        right:30px;
+    }
+    a{
+        text-decoration: none;
+        color:blueviolet;
+        font-size: 20px;
+    }
+    li{
+        color:blueviolet;font-family:Varela Round;font-weight:medium;color:white;
+        list-style-type: none;
+        padding: 10px;
+        display: inline-block;
+    } */

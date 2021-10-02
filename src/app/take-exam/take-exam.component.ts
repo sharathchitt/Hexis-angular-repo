@@ -63,7 +63,7 @@ export class TakeExamComponent implements OnInit {
   ngOnInit(): void {
 
     
-       this.counter=20000;
+       this.counter=600000;
        this.startCountdown(this.counter);
         //  console.log(JSON.parse(sessionStorage.getItem("examSpec")))
         //  console.log(JSON.parse(sessionStorage.getItem("examLevel")))

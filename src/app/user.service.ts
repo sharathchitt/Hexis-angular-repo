@@ -10,6 +10,7 @@ import { Loginstatus } from './loginstatus';
 import { MarksDto } from './marks-dto';
 import { User } from './model/user';
 import { QuestionDetailsDto } from './question-details-dto';
+import { ReportCardDto } from './report-card-dto';
 import { Status } from './status';
 import { UserDto } from './user-dto';
 
@@ -92,6 +93,16 @@ export class UserService {
     let url = 'http://localhost:8585/evaluate/';
  
     return  this.http.post<MarksDto>(url, captureResponseDto);
+  }
+
+  getReportCardsOfUser(userId:string):Observable<ReportCardDto[]>{
+    let url='http://localhost:8585/getReportCard?userId='+userId;
+    return this.http.get<ReportCardDto[]>(url);
+  }
+
+  fetchUsers(captureResponseDto : CaptureResponseDto):Observable<UserDto[]>{
+    let url="http://localhost:8585/fetchStudentsBasedOnExamIdMarkStatus/";
+    return this.http.post<UserDto[]>(url,captureResponseDto);
   }
   
 

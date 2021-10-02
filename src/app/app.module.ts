@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RegisteruserComponent } from './registeruser/registeruser.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { AngularEmojisModule } from 'angular-emojis';
@@ -24,6 +24,10 @@ import { LoginAdminComponent } from './login-admin/login-admin.component';
 import { ForgotAdminPassComponent } from './forgot-admin-pass/forgot-admin-pass.component';
 import { YourprofileComponent } from './yourprofile/yourprofile.component';
 import { ReportCardComponent } from './report-card/report-card.component';
+import { PreviousReportsComponent } from './previous-reports/previous-reports.component';
+import { GenerateUsersReportComponent } from './generate-users-report/generate-users-report.component';
+import { AdminViewUserComponent } from './admin-view-user/admin-view-user.component';
+import { AdminViewUserPageComponent } from './admin-view-user-page/admin-view-user-page.component';
 
 
 
@@ -45,7 +49,11 @@ import { ReportCardComponent } from './report-card/report-card.component';
     LoginAdminComponent,
     ForgotAdminPassComponent,
     YourprofileComponent,
-    ReportCardComponent
+    ReportCardComponent,
+    PreviousReportsComponent,
+    GenerateUsersReportComponent,
+    AdminViewUserComponent,
+    AdminViewUserPageComponent
     
     
   ],
@@ -56,7 +64,8 @@ import { ReportCardComponent } from './report-card/report-card.component';
     AngularEmojisModule,
     RouterModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

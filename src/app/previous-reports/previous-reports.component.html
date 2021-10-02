@@ -1,0 +1,37 @@
+<div style="margin-left: 22%;">
+    <h4>Exams completed:</h4>
+</div>
+
+    <table class="gridtable" *ngFor = " let report of reportCardList; let i=index" style="margin-left: 15%;">
+        <div class="container" style="padding-left: 145px;">
+            <h3>Your Test Report {{i+1}}:</h3>
+            <table class="table" style="font-weight: 400; font-size: 17px;">
+                <!-- <thead style="text-align: center;">
+                    <th>Feild</th>
+                    <th>Value</th>
+                </thead> -->
+                <tbody>
+                    
+                    <tr>
+                        <td><b>Status:</b></td>
+                        <td>{{report.status}}</td> 
+                    </tr>
+                    
+                    <tr>
+                        <td><b>Marks:</b></td>
+                        <td>{{report.marks}} </td>
+                    </tr>
+                    <tr>
+                        <td><b>Exam Spec:</b></td>
+                        <td>{{report.examSpec}} </td>
+                    </tr>
+                    <tr>
+                        <td><b>Exam Level:</b></td>
+                        <td>{{report.examLevel}} </td>
+        
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </table>

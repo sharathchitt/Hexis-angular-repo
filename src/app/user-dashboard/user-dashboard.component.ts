@@ -28,8 +28,9 @@ export class UserDashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-    
+    //console.log(sessionStorage.getItem('fullName'));
+    if(sessionStorage.getItem('fullName')==null)
+      this.router.navigate(['loginLink']);
     
   }
 

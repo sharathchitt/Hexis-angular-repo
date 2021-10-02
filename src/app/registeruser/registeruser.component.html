@@ -2,7 +2,7 @@
     <h2>Welcome to our User Registration Page !</h2>
     <h3>We are delighted to have you on our platform <angular-emojis [name]="'smile'" size="25"></angular-emojis></h3>
     <p style="margin-left: 82%;">Already Registered ? <a [routerLink]="['/loginLink']">Click Here</a></p>
-    <form #regForm="ngForm" (ngSubmit)="regForm.valid && process()">
+    <form  #regForm="ngForm" (ngSubmit)="regForm.valid && process()">
 
       <div class="form-group">
         <br>
@@ -15,7 +15,7 @@
           required
           minlength="2"
           pattern="^[A-Za-zÀ-ÿ ,.'-]+$"
-          #name="ngModel" />
+          #name="ngModel"/>
         <div *ngIf="regForm.submitted && name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
           <div *ngIf="name.errors?.required"><i>! Valid Name required</i></div>
           <div *ngIf="name.errors?.minlength">! Name must be more than 2 characters</div>

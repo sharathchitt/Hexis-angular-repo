@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   istopnav:boolean=true;
+  disabled:boolean=false;
   title = 'hexis-app';
 }

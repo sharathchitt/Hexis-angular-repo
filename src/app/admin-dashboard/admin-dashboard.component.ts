@@ -22,5 +22,9 @@ export class AdminDashboardComponent implements OnInit {
       //alert(JSON.stringify(this.adminObj));
     })
   }
+  logout(){
+    sessionStorage.removeItem('adminId');
+    //this.router.navigate(['homeLink']);
+  }
 
 }
