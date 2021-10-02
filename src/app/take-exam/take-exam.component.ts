@@ -1,10 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable, Subscription } from 'rxjs';
+
 import { CaptureResponseDto } from '../capture-response-dto';
 import { ExamInformationDto } from '../exam-information-dto';
 import { QuestionDetailsDto } from '../question-details-dto';
 import { ResponseList } from '../response-list';
 import { UserService } from '../user.service';
+
+
+
+
 
 @Component({
   selector: 'app-take-exam',
@@ -13,10 +19,52 @@ import { UserService } from '../user.service';
 })
 export class TakeExamComponent implements OnInit {
 
-  constructor(private service : UserService, private router:Router) { }
+  
+  
 
+//everySecond: Observable<number> = timer(0, 1000);
+
+  constructor(private service : UserService, private router:Router) { }
+  checkedProp:boolean=false;
+  buttonStatus : number =0;
+  counter:number;
+  timeUp:number=0;
+  minutes:number;
+  second:number;
+  
+  minString : string
+  secString : string
+  startCountdown(t) {
+  
+     this.minutes = Math.floor((t / 1000 / 60) % 60);
+     this.second =  Math.floor((t / 1000) % 60); 
+    const interval = setInterval(() => {
+      console.log(('0'+this.minutes).slice(-2));
+      console.log(('0'+this.second).slice(-2));
+      this.minString=('0'+this.minutes).slice(-2);
+      this.secString=('0'+this.second).slice(-2);
+      this.second--;
+      if(this.second==-1)
+      {
+
+        this.minutes--;
+        this.second=59;
+      }  
+      if (this.second <0 || this.minutes <0 ) {
+        clearInterval(interval);
+        this.timeUp=1;
+        
+        console.log('Ding!');
+        this.endExam();
+      }
+    }, 1000);
+  }
+  
   ngOnInit(): void {
+
     
+       this.counter=20000;
+       this.startCountdown(this.counter);
         //  console.log(JSON.parse(sessionStorage.getItem("examSpec")))
         //  console.log(JSON.parse(sessionStorage.getItem("examLevel")))
         
@@ -32,7 +80,7 @@ export class TakeExamComponent implements OnInit {
         })
       
   }
-
+  control:number=0;
   examInformationDto : ExamInformationDto = new ExamInformationDto();
 
   responsesList : ResponseList[];
@@ -55,12 +103,13 @@ export class TakeExamComponent implements OnInit {
 
   captureQid:number;
 
-  responseStringArr:string[] = [];
+  responseStringArr:string[] = ['E','E','E','E','E','E','E','E','E','E'];
 
   capture(response:string, responseId:number){
     console.log(response+' '+responseId)
     this.responseStringArr[responseId]=response;
     this.countSet.add(responseId);
+    this.buttonStatus=1;
     
     //this.captureQid=this.responsesList[responseId].questionId;
     //console.log(this.captureQid)
@@ -72,12 +121,14 @@ export class TakeExamComponent implements OnInit {
     this.radioStatus = false;
  }
 
-
+ 
 
   
   nextQuestion()
   {
     this.i++;
+    this.buttonStatus=0;
+    this.checkedProp=null;
     // document.getElementsByName['option1'][0].checked=false;
     // document.getElementsByName['option1'][1].checked=false;
     // document.getElementsByName['option1'][2].checked=false;
@@ -98,6 +149,7 @@ export class TakeExamComponent implements OnInit {
 
 
   endExam(){
+    this.control=1;
     for(var i=0;i<this.responseStringArr.length;i++)
       console.log(this.responseStringArr[i]+'\n');
     console.log(sessionStorage.getItem('examLevel'));
@@ -123,6 +175,7 @@ export class TakeExamComponent implements OnInit {
   
   previousQuestion()
   {
+    //this.buttonStatus=0;
     this.i--;
   }
   

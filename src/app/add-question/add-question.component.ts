@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { QuestionDetailsDto } from '../question-details-dto';
 import { UserService } from '../user.service';
 
@@ -9,7 +10,7 @@ import { UserService } from '../user.service';
 })
 export class AddQuestionComponent implements OnInit {
 
-  constructor(private service: UserService) { 
+  constructor(private service: UserService, private router:Router) { 
 
   }
   addQuestionDto1 : QuestionDetailsDto = new QuestionDetailsDto();
@@ -44,5 +45,10 @@ export class AddQuestionComponent implements OnInit {
     console.log(this.addQuestionDto1)
     this.addQuestions();
    }
+
+
+  resetForm(){
+    this.router.navigate([]).then(result => {  window.open('adminLink/addQuestionLink', '_self'); });
+  } 
 
 }

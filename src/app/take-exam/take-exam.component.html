@@ -42,7 +42,7 @@
                 <div class="border">
                     <div class="question bg-white p-3 border-bottom">
                         <div class="d-flex flex-row justify-content-between align-items-center mcq">
-                            <h4>Exam Page</h4><span>({{i+1}} of 10)</span>
+                            <h4>Exam Page</h4><span *ngIf='timeUp==0'>{{minString}} : {{secString}}</span> <span style="color: red;font-weight: 600;" *ngIf='timeUp==1'>Time Up !</span> <span>({{i+1}} of 10)</span>
                         </div>
                     </div>
                     <div class="question bg-white p-3 border-bottom " >
@@ -51,19 +51,23 @@
                             <h5 class="mt-1 ml-2">{{questionsList[i].question}}</h5>
                         </div>
                         <div class="ans ml-2">
-                            <label class="radio"> <input id="r1" type="radio" name="option1" (click)='capture("A",i)'> <span>{{questionsList[i].optionA}}</span>
+                            <label class="radio"> <input  id="r1" type="radio" name="option1" [checked]="checkedProp" (click)='capture("A",i)'> <span>{{questionsList[i].optionA}}</span>
+                            </label>
+                            <!-- <label *ngIf="buttonStatus==0"> <input  class="normalButtonCss" id="r1" type="radio" name="option1" (click)='capture("A",i)'> <span>Hello</span>
+                            </label>
+                            <label *ngIf="buttonStatus==1"> <input  class="checkedButtonCss"  id="r1" type="radio" name="option1" (click)='capture("A",i)'> <span>Hello1</span>
+                            </label> -->
+                        </div>
+                        <div class="ans ml-2">
+                            <label class="radio"> <input id="r2" type="radio" name="option1" [checked]="checkedProp" (click)='capture("B",i)'> <span>{{questionsList[i].optionB}}</span>
                             </label>
                         </div>
                         <div class="ans ml-2">
-                            <label class="radio"> <input id="r2" type="radio" name="option1" (click)='capture("B",i)'> <span>{{questionsList[i].optionB}}</span>
+                            <label class="radio"> <input id="r3" type="radio" name="option1" [checked]="checkedProp" (click)='capture("C",i)'> <span>{{questionsList[i].optionC}}</span>
                             </label>
                         </div>
                         <div class="ans ml-2">
-                            <label class="radio"> <input id="r3" type="radio" name="option1" (click)='capture("C",i)'> <span>{{questionsList[i].optionC}}</span>
-                            </label>
-                        </div>
-                        <div class="ans ml-2">
-                            <label class="radio"> <input id="r4" type="radio" name="option1" (click)='capture("D",i)'> <span>{{questionsList[i].optionD}}</span>
+                            <label class="radio"> <input id="r4" type="radio" name="option1" [checked]="checkedProp" (click)='capture("D",i)'> <span>{{questionsList[i].optionD}}</span>
                             </label>
                         </div>
                         
@@ -79,7 +83,7 @@
         </div>
     </div>
     <br><br>
-    <button id="endbtn" (click)='endExam()' *ngIf='countSet.size==10' class="btn btn-dark">END EXAM</button>
+    <button id="endbtn" (click)='endExam()' class="btn btn-dark">END EXAM</button>
     
     <br><br><br><br>
     
