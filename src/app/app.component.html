@@ -1,3 +1,6 @@
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" type="text/javascript"></script>
+</head>
 <!-- <div class="header">
     <img class="hexislogo" src="assets/Hexis-logo-ver2.svg" alt="Hexis-logo">
     <h2>
@@ -10,21 +13,50 @@
     <img class="hexislogo" src="assets/Hexis-logo-ver2.svg" alt="Hexis-logo">
     <ul>
         <li><a [routerLink]="['/homeLink']">Home</a></li>
+        
         <li><a [routerLink]="['/registerLink']">Register</a></li>
-        <li><a [routerLink]="['/loginLink']">Login</a></li>
-        <!-- <li *ngIf='disabled'><a [routerLink]="['/homeLink']">Logout</a></li> -->
-        <!-- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Login Options
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" [routerLink]="['/loginLink']">User Login</a>
-            <a class="dropdown-item" [routerLink]="['/loginAdminLink']">Admin Login</a>
-          </div>
-        </li> -->
-        <li><a href="#">About Us</a></li>
+        <li *ngIf="enabled==0"><a [routerLink]="['/loginLink']">Login</a></li>
+        <li *ngIf='enabled==1'><a [routerLink]="['/homeLink']">Logout</a></li>
+        <li><a [routerLink]="['/aboutUsLink']">About Us</a></li>
+        &nbsp;
+        <button type="button" class="btn btn-outline-danger dropdown-toggle" data-toggle="dropdown" >
+          Admin Area
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" [routerLink]="['/registerAdminLink']">Register Admin</a>
+          <a class="dropdown-item" [routerLink]="['/loginAdminLink']">Login Admin</a>
+        </div>
+     
     </ul>
-</div>
+</div> 
+
+<!-- <div class="collapse navbar-collapse bg-light" id="navbarSupportedContent">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Dropdown
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Something else here</a>
+      </div>
+    </li>
+    
+  </ul>
+  
+</div> -->
+
+
+ 
+    
 
 <!-- <img class="hexislogo" src="assets/Hexis-logo-ver1.jpg" alt="Hexis-logo"> -->
 <div class="main">

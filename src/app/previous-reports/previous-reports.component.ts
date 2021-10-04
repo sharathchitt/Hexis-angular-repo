@@ -20,9 +20,6 @@ export class PreviousReportsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    
-
-    
 
     this.ReportCardsOfUser();
     sessionStorage.setItem("reportCardList",JSON.stringify(this.reportCardList))

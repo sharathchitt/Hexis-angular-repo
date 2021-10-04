@@ -13,7 +13,7 @@
           required
           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
           #em="ngModel" />
-        <div *ngIf="regForm.submitted && em.invalid && (em.dirty || em.touched)" class="alert alert-danger">
+        <div *ngIf="em.invalid && (em.dirty || em.touched)" class="alert alert-danger">
           <div *ngIf="em.errors?.required"><i>! Email ID is required</i></div>
           <div *ngIf="em.errors?.pattern">Please enter a Valid Email ID</div>
         </div>
@@ -30,7 +30,7 @@
           required
           
           #pass="ngModel" />
-        <div *ngIf="regForm.submitted && pass.invalid && (pass.dirty || pass.touched)" class="alert alert-danger">
+        <div *ngIf="pass.invalid && (pass.dirty || pass.touched)" class="alert alert-danger">
           <div *ngIf="pass.errors?.required"><i>! Password is required</i></div>
           <div *ngIf="pass.errors?.pattern">Password can contain only AlphaNumerics</div>
         </div>  

@@ -16,7 +16,7 @@
           minlength="2"
           pattern="^[A-Za-zÀ-ÿ ,.'-]+$"
           #name="ngModel"/>
-        <div *ngIf="regForm.submitted && name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
           <div *ngIf="name.errors?.required"><i>! Valid Name required</i></div>
           <div *ngIf="name.errors?.minlength">! Name must be more than 2 characters</div>
           <div *ngIf="name.errors?.pattern">! Valid Name required !</div>
@@ -34,7 +34,7 @@
           required
           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
           #em="ngModel" />
-        <div *ngIf="regForm.submitted && em.invalid && (em.dirty || em.touched)" class="alert alert-danger">
+        <div *ngIf="em.invalid && (em.dirty || em.touched)" class="alert alert-danger">
           <div *ngIf="em.errors?.required"><i>! Email ID is required</i></div>
           <div *ngIf="em.errors?.pattern">Please enter a Valid Email ID</div>
         </div>
@@ -50,7 +50,7 @@
           required
           
           #pass="ngModel" />
-        <div *ngIf="regForm.submitted && pass.invalid && (pass.dirty || pass.touched)" class="alert alert-danger">
+        <div *ngIf="pass.invalid && (pass.dirty || pass.touched)" class="alert alert-danger">
           <div *ngIf="pass.errors?.required"><i>! Password is required</i></div>
           
         </div>  
@@ -65,7 +65,7 @@
           name="t5"
           required
           #dob="ngModel" />
-        <div *ngIf="regForm.submitted && dob.invalid && (dob.dirty || dob.touched)" class="alert alert-danger">
+        <div *ngIf="dob.invalid && (dob.dirty || dob.touched)" class="alert alert-danger">
           <div *ngIf="dob.errors?.required"><i>! DOB is required</i></div>
         </div>  
       </div>
@@ -79,7 +79,7 @@
           required
           class="form-control"
           #city="ngModel" />
-          <div *ngIf="regForm.submitted && city.invalid && (city.dirty || city.touched)" class="alert alert-danger">
+          <div *ngIf="city.invalid && (city.dirty || city.touched)" class="alert alert-danger">
             <div *ngIf="city.errors?.required"><i>! City is required</i></div>
           </div>
       </div>
@@ -91,10 +91,14 @@
           id="usermob"
           name="t7"
           required
+          minlength="10"
+          maxlength="10"
           class="form-control"
           #mobile="ngModel" />
-          <div *ngIf="regForm.submitted && mobile.invalid && (mobile.dirty || mobile.touched)" class="alert alert-danger">
+          <div *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)" class="alert alert-danger">
             <div *ngIf="mobile.errors?.required"><i>! Mobile number is required</i></div>
+            <div *ngIf="mobile.errors?.minlength"><i>! 10 digits are required</i></div>
+            <div *ngIf="mobile.errors?.maxlength"><i>! 10 digits are allowed only</i></div>
           </div>
       </div>
 
@@ -107,7 +111,7 @@
           required
           class="form-control"
           #state="ngModel" />
-          <div *ngIf="regForm.submitted && state.invalid && (state.dirty || state.touched)" class="alert alert-danger">
+          <div *ngIf="state.invalid && (state.dirty || state.touched)" class="alert alert-danger">
             <div *ngIf="state.errors?.required"><i>! State is required</i></div>
           </div>
       </div>
@@ -121,7 +125,7 @@
           required
           class="form-control"
           #quali="ngModel" />
-          <div *ngIf="regForm.submitted && quali.invalid && (quali.dirty || quali.touched)" class="alert alert-danger">
+          <div *ngIf="quali.invalid && (quali.dirty || quali.touched)" class="alert alert-danger">
             <div *ngIf="quali.errors?.required"><i>! Educational Qualification is required</i></div>
           
           </div>
@@ -136,7 +140,7 @@
           required
           class="form-control"
           #yoc="ngModel" />
-        <div *ngIf="regForm.submitted && yoc.invalid && (yoc.dirty || yoc.touched)" class="alert alert-danger">
+        <div *ngIf="yoc.invalid && (yoc.dirty || yoc.touched)" class="alert alert-danger">
           <div *ngIf="yoc.errors?.required"><i>! Qualification Year is required</i></div>
         </div>  
       </div>

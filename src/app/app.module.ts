@@ -28,6 +28,7 @@ import { PreviousReportsComponent } from './previous-reports/previous-reports.co
 import { GenerateUsersReportComponent } from './generate-users-report/generate-users-report.component';
 import { AdminViewUserComponent } from './admin-view-user/admin-view-user.component';
 import { AdminViewUserPageComponent } from './admin-view-user-page/admin-view-user-page.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 
@@ -53,7 +54,8 @@ import { AdminViewUserPageComponent } from './admin-view-user-page/admin-view-us
     PreviousReportsComponent,
     GenerateUsersReportComponent,
     AdminViewUserComponent,
-    AdminViewUserPageComponent
+    AdminViewUserPageComponent,
+    AboutUsComponent
     
     
   ],

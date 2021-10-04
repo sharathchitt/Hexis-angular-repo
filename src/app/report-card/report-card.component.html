@@ -157,4 +157,11 @@
             
         </tbody>
     </table>
+    <br>
+    <!-- <button class="btn btn-primary" (click)="sendMail()">Send this report to email</button> -->
+    <br>
+    <button class="btn btn-success" *ngIf="levelButton==1" (click)="proceed()">Proceed to next level</button>
+    <br>
+    <button class="btn btn-primary" *ngIf="levelButton==2" (click)="proceedBack()">Try Again</button>
+    <br><br><br><br><br>
 </div>

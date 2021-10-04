@@ -104,6 +104,12 @@ export class UserService {
     let url="http://localhost:8585/fetchStudentsBasedOnExamIdMarkStatus/";
     return this.http.post<UserDto[]>(url,captureResponseDto);
   }
+
+  forgotPassword(email:string):Observable<Status>{
+    let url = 'http://localhost:8585/forgotpass?email='+email;
+    console.log(url+' '+email);
+    return this.http.get<Status>(url);
+  }
   
 
 }

@@ -12,9 +12,14 @@ export class SelectExamComponent implements OnInit {
 
   examSpec:string;
   examLevel: string;
+  examStatus:string;
+  
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+    //this.examStatus=sessionStorage.getItem('status');
+    this.examStatus=localStorage.getItem('status');
+    console.log(localStorage.getItem('status'));
   }
 
   selectedExam(examSpec:string){

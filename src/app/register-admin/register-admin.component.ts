@@ -23,7 +23,8 @@ export class RegisterAdminComponent implements OnInit {
     this.adminService.registerAdmin(this.adminObj).subscribe(data => {
       //alert(JSON.stringify(data));
       if(data.status == 'SUCCESS') {
-        this.router.navigate(['loginAdminLink'])
+
+        alert('You have been registered!\nYou will receive a email shortly from us to confirm your registration.');
       }
       else {
         //missing code right now

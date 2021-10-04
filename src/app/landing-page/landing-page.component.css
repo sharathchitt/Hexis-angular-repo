@@ -1,8 +1,17 @@
 @import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
 
-.landingBody{
-    background-color: rgb(179, 248, 225);
+.landingBody img{
+    /* background-color: rgb(179, 248, 225); */
+    /* background-image: url('src/assets/Landing-page.jpg'); */
+    width: 100%;
+    background-size: cover;
+    padding: 3% 1% ;
+    /* padding: 10%; */
+    /* margin-left: 5%; */
+
 }
+
+
 
 .landingBody a{
     border: 2px solid red;

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutUsComponent } from './about-us/about-us.component';
 import { AddQuestionComponent } from './add-question/add-question.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AdminViewUserPageComponent } from './admin-view-user-page/admin-view-user-page.component';
@@ -101,6 +102,9 @@ const routes: Routes = [
   },
   {
     path: 'reportCardLink', component: ReportCardComponent
+  },
+  {
+    path: 'aboutUsLink', component: AboutUsComponent
   }
   
 ];

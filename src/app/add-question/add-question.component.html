@@ -15,9 +15,9 @@
                     </tr>
                     <br>
                     <tr>
-                        &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <input id ='level1' type="radio" value='LEVEL1' name="level" [(ngModel)]=addQuestionDto1.examLevel>&nbsp; LEVEL 1&nbsp;&nbsp; &nbsp;&nbsp;
-                        <input id ='level2' type="radio" value='LEVEL2' name="level" [(ngModel)]=addQuestionDto1.examLevel>&nbsp;LEVEL 2&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-                        <input id ='level3' type="radio" value='LEVEL3' name="level" [(ngModel)]=addQuestionDto1.examLevel>&nbsp;LEVEL 3&nbsp;
+                        &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <input id ='level1' type="radio" value='{{addQuestionDto1.examSpecialization}}LEVEL1' name="level" [(ngModel)]=addQuestionDto1.examLevel>&nbsp; LEVEL 1&nbsp;&nbsp; &nbsp;&nbsp;
+                        <input id ='level2' type="radio" value='{{addQuestionDto1.examSpecialization}}LEVEL2' name="level" [(ngModel)]=addQuestionDto1.examLevel>&nbsp;LEVEL 2&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                        <input id ='level3' type="radio" value='{{addQuestionDto1.examSpecialization}}LEVEL3' name="level" [(ngModel)]=addQuestionDto1.examLevel>&nbsp;LEVEL 3&nbsp;
                     </tr>
                 </table> 
     

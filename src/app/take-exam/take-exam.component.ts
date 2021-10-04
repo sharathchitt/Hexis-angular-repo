@@ -39,8 +39,8 @@ export class TakeExamComponent implements OnInit {
      this.minutes = Math.floor((t / 1000 / 60) % 60);
      this.second =  Math.floor((t / 1000) % 60); 
     const interval = setInterval(() => {
-      console.log(('0'+this.minutes).slice(-2));
-      console.log(('0'+this.second).slice(-2));
+      //console.log(('0'+this.minutes).slice(-2));
+      //console.log(('0'+this.second).slice(-2));
       this.minString=('0'+this.minutes).slice(-2);
       this.secString=('0'+this.second).slice(-2);
       this.second--;
@@ -54,7 +54,7 @@ export class TakeExamComponent implements OnInit {
         clearInterval(interval);
         this.timeUp=1;
         
-        console.log('Ding!');
+        //console.log('Ding!');
         this.endExam();
       }
     }, 1000);
@@ -149,6 +149,7 @@ export class TakeExamComponent implements OnInit {
 
 
   endExam(){
+    
     this.control=1;
     for(var i=0;i<this.responseStringArr.length;i++)
       console.log(this.responseStringArr[i]+'\n');
@@ -161,12 +162,15 @@ export class TakeExamComponent implements OnInit {
     this.service.sendResponses(this.captures)
     .subscribe(data=>{
       console.log(JSON.stringify(data));
-      
+      //alert(JSON.stringify(data));
+      localStorage.setItem('status',data.status);
       sessionStorage.setItem('marks', data.marks.toString());
       sessionStorage.setItem('status', data.status);
+      console.log(data.marks.toString());
+      console.log(data.status);
       //sessionStorage.setItem('capturedResponses', JSON.stringify(data));
     })  
-    alert('Exam was ended !')
+    //alert('Exam was ended !')
     this.router.navigate([]).then(result => {  window.open('reportCardLink', '_self'); });
     // this.router.navigate(['reportCardLink']);
     //open('/userDashboard', '_self').close();
