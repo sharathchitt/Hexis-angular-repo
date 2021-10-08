@@ -1,0 +1,53 @@
+
+  <div class="container" >
+      <h2>Welcome Admin !</h2>
+      <form #regForm="ngForm" (ngSubmit)="regForm.valid && loginadmin()">
+  
+        <div class="form-group">
+          <br>
+          <label for="email">Enter your Email ID: </label> <span style="color:red;"> *</span>
+          <input [(ngModel)]=adminObj.email
+            type="email"
+            class="form-control"
+            id="email"
+            name="t3"
+            required
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            #em="ngModel" />
+          <div *ngIf="em.invalid && (em.dirty || em.touched)" class="alert alert-danger">
+            <div *ngIf="em.errors?.required"><i>! Email ID is required</i></div>
+            <div *ngIf="em.errors?.pattern">Please enter a Valid Email ID</div>
+          </div>
+        </div>
+        <br>
+  
+        <div class="form-group">
+          <label for="password">Enter your Password: </label> <span style="color:red;"> *</span>
+          <input [(ngModel)]=adminObj.password 
+            type="password"
+            class="form-control"
+            id="password"
+            name="t4"
+            required
+            #pass="ngModel" />
+          <div *ngIf="pass.invalid && (pass.dirty || pass.touched)" class="alert alert-danger">
+            <div *ngIf="pass.errors?.required"><i>! Password is required</i></div>
+            <div *ngIf="pass.errors?.pattern">Password can contain only AlphaNumerics</div>
+          </div>  
+        </div>
+  
+        <br><br>
+        <button type="submit" class="btn btn-success">Login</button>
+      </form>
+      <br><br><br>
+  
+      <div class="otheropts">
+        New Admin? <a class="newadmin" [routerLink]="['/registerAdminLink']">Click Here</a>
+        <!-- <a class="forgotpass" [routerLink]="['/forgotAdminPassLink']">Forgot Password?</a> -->
+      </div>
+    
+      <br><br><br><br>
+      <p style="text-align:center;">Created with <angular-emojis [name]="'heart'" size="15"></angular-emojis> using HéxisEngine</p>
+      
+
+  

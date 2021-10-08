@@ -1,0 +1,28 @@
+<div class="container">
+    <h3>Can't Recall your password?</h3>
+    <h4>Don't worry we got you covered <angular-emojis [name]="'smiley'" size="20"> </angular-emojis></h4>
+
+    <form #regForm="ngForm" (ngSubmit)="regForm.valid && process()">
+        <div class="form-group">
+            <br>
+            <label for="useremail">Enter registered Email ID: </label> <span style="color:red;"> *</span>
+            <input [(ngModel)]=userObj.email
+                type="email"
+                class="form-control"
+                id="useremail"
+                name="t3"
+                required
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                #em="ngModel" />
+            <div *ngIf="em.invalid && (em.dirty || em.touched)" class="alert alert-danger">
+                <div *ngIf="em.errors?.required"><i>! Email ID is required</i></div>
+                <div *ngIf="em.errors?.pattern">Please enter a Valid Email ID</div>
+            </div>
+
+        </div>
+        <br>
+        <button type="submit" class="btn btn-info">Save Me !</button>
+        <br><br>
+    </form>
+</div>
+

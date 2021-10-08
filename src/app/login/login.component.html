@@ -1,0 +1,52 @@
+<div class="container">
+    <h2>Welcome Registered User !</h2>
+    <form #regForm="ngForm" (ngSubmit)="regForm.valid && process()">
+
+      <div class="form-group">
+        <br>
+        <label for="useremail">Enter your Email ID: </label> <span style="color:red;"> *</span>
+        <input [(ngModel)]=userObj.email
+          type="email"
+          class="form-control"
+          id="useremail"
+          name="t3"
+          required
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          #em="ngModel" />
+        <div *ngIf="em.invalid && (em.dirty || em.touched)" class="alert alert-danger">
+          <div *ngIf="em.errors?.required"><i>! Email ID is required</i></div>
+          <div *ngIf="em.errors?.pattern">Please enter a Valid Email ID</div>
+        </div>
+      </div>
+      <br>
+
+      <div class="form-group">
+        <label for="userpass">Enter your Password: </label> <span style="color:red;"> *</span>
+        <input [(ngModel)]=userObj.password 
+          type="password"
+          class="form-control"
+          id="userpass"
+          name="t4"
+          required
+          
+          #pass="ngModel" />
+        <div *ngIf="pass.invalid && (pass.dirty || pass.touched)" class="alert alert-danger">
+          <div *ngIf="pass.errors?.required"><i>! Password is required</i></div>
+          <div *ngIf="pass.errors?.pattern">Password can contain only AlphaNumerics</div>
+        </div>  
+      </div>
+
+      <br><br>
+      <button type="submit" class="btn btn-success">Login</button>
+    </form>
+    <br><br><br>
+
+    <div class="otheropts">
+      New User? <a class="newuser" [routerLink]="['/registerLink']">Click Here</a>
+      <a class="forgotpass" [routerLink]="['/forgotLink']">Forgot Password?</a>
+    </div>
+  
+    <br><br><br><br>
+    <p style="text-align:center;">Created with <angular-emojis [name]="'heart'" size="15"></angular-emojis> using HéxisEngine</p>
+    
+</div>

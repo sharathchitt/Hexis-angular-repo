@@ -1,0 +1,66 @@
+<div class="layer" style="margin-left: 19%;">
+        <div class="sublayer" ><br>
+        <h4>&nbsp;Please select the Technology</h4> <br> 
+                <table>
+                    <tr> 
+                        &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<input id ='java' type="radio" value='JAVA' name="exam" [(ngModel)]=reportCardDto.examSpecialization>&nbsp; JAVA &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;   
+                        <input id ='python' type="radio" value='PYTHON' name="exam" [(ngModel)]=reportCardDto.examSpecialization>&nbsp; PYTHON &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                        <input id ='sql' type="radio" value='SQL' name="exam" [(ngModel)]=reportCardDto.examSpecialization>&nbsp; SQL &nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;  
+                        <input id ='c/c++' type="radio" value='C' name="exam" [(ngModel)]=reportCardDto.examSpecialization>&nbsp;C/C++ &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                        
+                    </tr>
+                    <br>
+                    <h4>&nbsp;Select the Level</h4> <br>
+                    <tr>
+                        &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <input id ='level1' type="radio" value='{{reportCardDto.examSpecialization}}LEVEL1' name="level" [(ngModel)]=reportCardDto.examLevel>&nbsp; LEVEL 1&nbsp;&nbsp; &nbsp;&nbsp;
+                        <input id ='level2' type="radio" value='{{reportCardDto.examSpecialization}}LEVEL2' name="level" [(ngModel)]=reportCardDto.examLevel>&nbsp;LEVEL 2&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                        <input id ='level3' type="radio" value='{{reportCardDto.examSpecialization}}LEVEL3' name="level" [(ngModel)]=reportCardDto.examLevel>&nbsp;LEVEL 3&nbsp;
+                    </tr><br><br>
+                    <tr>
+                        <h4>&nbsp;Select the Status</h4><br>
+                        &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+                        <input id ='PASS' type="radio" value='PASS' name="status" [(ngModel)]=reportCardDto.status>&nbsp;PASS&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                        <input id ='FAIL' type="radio" value='FAIL' name="status" [(ngModel)]=reportCardDto.status>&nbsp;FAIL&nbsp;
+                    </tr>
+                </table> 
+                <br><br>
+                <button class="btn btn-primary" (click)="generateReport()">Generate Report</button>
+            </div>
+</div>
+
+<div style="margin-left: 17%;">
+    <table class="gridtable" *ngFor = " let user of userObjArr; let i=index" >
+        <div class="container" style="padding-left: 145px;">
+            <h3>User {{i+1}}:</h3>
+            <table class="table" style="font-weight: 400; font-size: 17px;">
+                <!-- <thead style="text-align: center;">
+                    <th>Feild</th>
+                    <th>Value</th>
+                </thead> -->
+                <tbody>
+                    
+                    <tr>
+                        <td><b>User Id</b></td>
+                        <td>{{user.userId}}</td> 
+                    </tr>
+                    
+                    <tr>
+                        <td><b>User Name</b></td>
+                        <td>{{user.fullName}} </td>
+                    </tr>
+                    <tr>
+                        <td><b>User Email:</b></td>
+                        <td>{{user.email}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>City:</b></td>
+                        <td>{{user.city}}</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </table>
+</div>
+
+

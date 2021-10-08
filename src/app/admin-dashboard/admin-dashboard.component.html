@@ -1,1 +1,34 @@
+
+<div class="dashhead" *ngIf='true'>
+  <div class="left-area">
+    <h2>Dashboard</h2>
+      
+    </div>
+<div class="sidebar">
+  
+  <!-- <img src="" 
+  class="rounded-circle mx-auto d-block" alt="Profile Pic" width="100" height="100">  -->
+   
+  
+  <a [routerLink]="['/adminLink/viewAdminLink']">Your Profile</a> 
+  <a [routerLink]="['/adminLink/addQuestionLink']">Add Question</a>
+  <a [routerLink]="['/adminLink/deleteQuestionLink']">Delete Question</a>
+  
+  <a [routerLink]="['/adminLink/searchUsersLink']">Generate Report</a>
+  <a [routerLink]="['/adminLink/adminViewUserLink']">View Student Profile</a>
+  <a [routerLink]="['/homeLink']" (click)="logout()">Logout</a>
+</div>
+</div>
+
+<div class="main" style="padding-left: 20px;">
+  <h1 style=" background-color: rgba(169, 169, 169, 0.527); text-align: center;">Dashboard</h1>
+</div>
+
+<router-outlet></router-outlet>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
 <p>admin-dashboard works!</p>
+

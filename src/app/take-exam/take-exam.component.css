@@ -1,0 +1,87 @@
+/* @import url('https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css'); */
+/* @import url('https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js'); */
+/* table.gridtable {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+}
+table.gridtable th {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #dedede;
+}
+table.gridtable td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+}
+
+div.sublayer{
+    border-style: groove;
+    width : 99%;
+
+} */
+*{
+    font-size: medium;
+}
+body {
+    background-color: #eee
+}
+
+label.radio {
+    cursor: pointer
+}
+
+label.radio input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    pointer-events: none
+}
+
+
+ label.radio span {
+    padding: 10px;
+    border: 1px solid red;
+    display: inline-block;
+    color: red; 
+    width: 50em;
+    /* text-align: center; */
+    border-radius: 3px;
+    margin-top: 7px;
+    text-transform: none ;
+}
+
+ label.radio input:checked+span {
+    border-color: red;
+    background-color: red; 
+    /* width: 100%; */
+    width: 50em;
+    color: #fff
+} 
+
+.ans {
+    margin-left: 36px !important
+}
+
+.btn:focus {
+    outline: 0 !important;
+    box-shadow: none !important
+}
+
+.btn:active {
+    outline: 0 !important;
+    box-shadow: none !important
+}
+
+#endbtn{
+   margin-left: 50%;
+}
