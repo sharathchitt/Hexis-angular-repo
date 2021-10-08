@@ -3,12 +3,15 @@ import { Router } from '@angular/router';
 import { Admin } from '../admin';
 import { UserService } from '../user.service';
 
+
+
 @Component({
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent implements OnInit {
+
 
   adminId: any;
   adminObj: Admin;
@@ -29,6 +32,11 @@ export class AdminDashboardComponent implements OnInit {
   logout(){
     sessionStorage.removeItem('adminId');
     //this.router.navigate(['homeLink']);
+
+  constructor() { }
+
+  ngOnInit(): void {
+
   }
 
 }
