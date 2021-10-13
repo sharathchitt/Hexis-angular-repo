@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../model/user';
 
@@ -13,7 +13,7 @@ export class UserDashboardComponent implements OnInit {
 
   userId:number;
   examId:number;
-  enabled:number;
+  //enabled:number;
   user:User = new User();
   istopnav:boolean=false;
   
@@ -34,12 +34,13 @@ export class UserDashboardComponent implements OnInit {
     //console.log(sessionStorage.getItem('fullName'));
     if(sessionStorage.getItem('fullName')==null)
       this.router.navigate(['loginLink']);
-     console.log(sessionStorage.getItem('enable')); 
-    if(sessionStorage.getItem('enable')=='0'){
-      this.enabled=1;
-      console.log(this.enabled)
-    }
-      
+     //console.log(sessionStorage.getItem('enable')); 
+    // if(sessionStorage.getItem('enable')=='0'){
+    //   this.enabled=1;
+    //   console.log(this.enabled)
+    // }
+    //console.log(this.eleRef.nativeElement.parentElement.enabled);
+   
     
 
   constructor() { }
@@ -47,5 +48,7 @@ export class UserDashboardComponent implements OnInit {
   ngOnInit(): void {
 
   }
+
+  
 
 }

@@ -1,90 +1,52 @@
-<!-- <label>Exam Level
-    <input type="text" name="examLevel" [(ngModel)]=examInformationDto.examLevel #eLevel="ngModel">
-    </label>
-    <label>Exam Specialization
-        <input type="text" name="examSpecialization" [(ngModel)]=examInformationDto.examSpecialization #eSpec="ngModel">
-        </label>
-    
-    <button (click)="viewQuestionsForExam()">Show Questions</button> -->
-    
-    <!-- <div class="container">
-        <table class="gridtable" *ngIf="i < questionsList.length">
-            <tbody>
-               
-                        <td>{{ i+1 }}
-                            {{ questionsList[i].question}}<br>
-                        
-                            <input id = 'optionA' type="radio" value="A" name={{questionsList[i].questionId}}  >
-                             {{ questionsList[i].optionA}}<br>
-                            <input id = 'optionB' type="radio" value="B" name={{questionsList[i].questionId}}  >  
-                             {{ questionsList[i].optionB}}<br>
-                            <input id = 'optionC' type="radio" value="C" name={{questionsList[i].questionId}}  > 
-                             {{ questionsList[i].optionC}}<br>
-                            <input id = 'optionD' type="radio" value="D" name={{questionsList[i].questionId}} > 
-                             {{ questionsList[i].optionD}}
-                             <br>
-                            <!-- show the ansewer={{responsesList[i].response}} -->
-                            
-                            <!-- <button (click)="previousQuestion()">Previous Question</button>
-                            <button (click)="nextQuestion()" >Next Question</button>
-                        <br><br>
-                        </td><br><br>
-                    
-    
-            </tbody>
-    
-        </table>
-        <br><br>  
-    </div> --> 
-    <div class="container mt-5"  >
-        <div class="d-flex justify-content-center row">
-            <div class="col-md-10 col-lg-10">
-                <div class="border">
-                    <div class="question bg-white p-3 border-bottom">
-                        <div class="d-flex flex-row justify-content-between align-items-center mcq">
-                            <h4>Exam Page</h4><span *ngIf='timeUp==0'>{{minString}} : {{secString}}</span> <span style="color: red;font-weight: 600;" *ngIf='timeUp==1'>Time Up !</span> <span>({{i+1}} of 10)</span>
-                        </div>
+<div class="container mt-5"  >
+    <div class="d-flex justify-content-center row">
+        <div class="col-md-10 col-lg-10">
+            <div class="border">
+                <div class="question bg-white p-3 border-bottom">
+                    <div class="d-flex flex-row justify-content-between align-items-center mcq">
+                        <h4>Exam Page</h4><span *ngIf='timeUp==0'>{{minString}} : {{secString}}</span> <span style="color: red;font-weight: 600;" *ngIf='timeUp==1'>Time Up !</span> <span>({{i+1}} of 10)</span>
                     </div>
-                    <div class="question bg-white p-3 border-bottom " >
-                        <div class="d-flex flex-row align-items-center question-title">
-                            <h3 class="text-danger">{{i+1}}</h3>
-                            <h5 class="mt-1 ml-2">{{questionsList[i].question}}</h5>
-                        </div>
-                        <div class="ans ml-2">
-                            <label class="radio"> <input  id="r1" type="radio" name="option1" [checked]="checkedProp" (click)='capture("A",i)'> <span>{{questionsList[i].optionA}}</span>
-                            </label>
-                            <!-- <label *ngIf="buttonStatus==0"> <input  class="normalButtonCss" id="r1" type="radio" name="option1" (click)='capture("A",i)'> <span>Hello</span>
-                            </label>
-                            <label *ngIf="buttonStatus==1"> <input  class="checkedButtonCss"  id="r1" type="radio" name="option1" (click)='capture("A",i)'> <span>Hello1</span>
-                            </label> -->
-                        </div>
-                        <div class="ans ml-2">
-                            <label class="radio"> <input id="r2" type="radio" name="option1" [checked]="checkedProp" (click)='capture("B",i)'> <span>{{questionsList[i].optionB}}</span>
-                            </label>
-                        </div>
-                        <div class="ans ml-2">
-                            <label class="radio"> <input id="r3" type="radio" name="option1" [checked]="checkedProp" (click)='capture("C",i)'> <span>{{questionsList[i].optionC}}</span>
-                            </label>
-                        </div>
-                        <div class="ans ml-2">
-                            <label class="radio"> <input id="r4" type="radio" name="option1" [checked]="checkedProp" (click)='capture("D",i)'> <span>{{questionsList[i].optionD}}</span>
-                            </label>
-                        </div>
-                        
-                        <div  class="d-flex flex-row justify-content-between align-items-center p-3 bg-white"><button *ngIf = "i>0" class="btn btn-primary d-flex align-items-center btn-danger" type="button" (click)="previousQuestion()"><i class="fa fa-angle-left mt-1 mr-1"></i> < Previous</button>
-                        
-                        
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button *ngIf = "i<questionsList.length-1" class="btn btn-primary border-success align-items-center btn-success" type="button"(click)="nextQuestion() && example()"  >Next ><i class="fa fa-angle-right ml-2"></i></button>
-                    </div>
-                    </div>
-                   
                 </div>
+                <div class="question bg-white p-3 border-bottom " >
+                    <div class="d-flex flex-row align-items-center question-title">
+                        <h3 class="text-danger">{{i+1}}</h3>
+                        <h5 class="mt-1 ml-2">{{questionsList[i].question}}</h5>
+                    </div>
+                    <div class="ans ml-2">
+                        <label class="radio"> <input  id="r1" type="radio" name="option1" [checked]="checkedProp" (click)='capture("A",i)'> <span>{{questionsList[i].optionA}}</span>
+                        </label>
+                        <!-- <label *ngIf="buttonStatus==0"> <input  class="normalButtonCss" id="r1" type="radio" name="option1" (click)='capture("A",i)'> <span>Hello</span>
+                        </label>
+                        <label *ngIf="buttonStatus==1"> <input  class="checkedButtonCss"  id="r1" type="radio" name="option1" (click)='capture("A",i)'> <span>Hello1</span>
+                        </label> -->
+                    </div>
+                    <div class="ans ml-2">
+                        <label class="radio"> <input id="r2" type="radio" name="option1" [checked]="checkedProp" (click)='capture("B",i)'> <span>{{questionsList[i].optionB}}</span>
+                        </label>
+                    </div>
+                    <div class="ans ml-2">
+                        <label class="radio"> <input id="r3" type="radio" name="option1" [checked]="checkedProp" (click)='capture("C",i)'> <span>{{questionsList[i].optionC}}</span>
+                        </label>
+                    </div>
+                    <div class="ans ml-2">
+                        <label class="radio"> <input id="r4" type="radio" name="option1" [checked]="checkedProp" (click)='capture("D",i)'> <span>{{questionsList[i].optionD}}</span>
+                        </label>
+                    </div>
+                    
+                    <div  class="d-flex flex-row justify-content-between align-items-center p-3 bg-white"><button *ngIf = "i>0" class="btn btn-primary d-flex align-items-center btn-danger" type="button" (click)="previousQuestion()"><i class="fa fa-angle-left mt-1 mr-1"></i> < Previous</button>
+                    
+                    
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button *ngIf = "i<questionsList.length-1" class="btn btn-primary border-success align-items-center btn-success" type="button"(click)="nextQuestion() && example()"  >Next ><i class="fa fa-angle-right ml-2"></i></button>
+                </div>
+                </div>
+                
             </div>
         </div>
     </div>
-    <br><br>
-    <button id="endbtn" (click)='endExam()' class="btn btn-dark">END EXAM</button>
-    
-    <br><br><br><br>
+</div>
+<br><br>
+<button id="endbtn" (click)='endExam()' class="btn btn-dark">END EXAM</button>
+
+<br><br><br><br>
     
     <!-- <router-outlet></router-outlet> -->

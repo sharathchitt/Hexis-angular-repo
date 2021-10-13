@@ -161,16 +161,13 @@ export class TakeExamComponent implements OnInit {
      console.log(this.captures);
     this.service.sendResponses(this.captures)
     .subscribe(data=>{
-      console.log(JSON.stringify(data));
-      //alert(JSON.stringify(data));
-      localStorage.setItem('status',data.status);
+      
       sessionStorage.setItem('marks', data.marks.toString());
       sessionStorage.setItem('status', data.status);
-      console.log(data.marks.toString());
-      console.log(data.status);
+     
       //sessionStorage.setItem('capturedResponses', JSON.stringify(data));
     })  
-    //alert('Exam was ended !')
+    alert('Exam was ended !')
     this.router.navigate([]).then(result => {  window.open('reportCardLink', '_self'); });
     // this.router.navigate(['reportCardLink']);
     //open('/userDashboard', '_self').close();
