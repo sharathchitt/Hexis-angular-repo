@@ -28,7 +28,7 @@ export class RegisteruserComponent implements OnInit {
     .subscribe(data =>{
       //alert(JSON.stringify(data));
       if(data.status=='SUCCESS'){
-        alert('You have been registered!\nYou will receive a email shortly from us to confirm your registration.');
+        //alert('You have been registered!\nYou will receive a email shortly from us to confirm your registration.');
       }
       else{
         alert(data.status);

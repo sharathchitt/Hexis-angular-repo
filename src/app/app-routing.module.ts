@@ -105,6 +105,10 @@ const routes: Routes = [
   },
   {
     path: 'aboutUsLink', component: AboutUsComponent
+  },
+  {
+    path: '**',
+    component: LandingPageComponent
   }
   
 ];
