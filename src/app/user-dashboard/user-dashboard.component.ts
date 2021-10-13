@@ -2,12 +2,14 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
 import { Router } from '@angular/router';
 import { User } from '../model/user';
 
+
 @Component({
   selector: 'app-user-dashboard',
   templateUrl: './user-dashboard.component.html',
   styleUrls: ['./user-dashboard.component.css']
 })
 export class UserDashboardComponent implements OnInit {
+
 
   userId:number;
   examId:number;
@@ -40,6 +42,11 @@ export class UserDashboardComponent implements OnInit {
     //console.log(this.eleRef.nativeElement.parentElement.enabled);
    
     
+
+  constructor() { }
+
+  ngOnInit(): void {
+
   }
 
   

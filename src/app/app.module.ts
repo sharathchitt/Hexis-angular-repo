@@ -31,11 +31,17 @@ import { AdminViewUserPageComponent } from './admin-view-user-page/admin-view-us
 import { AboutUsComponent } from './about-us/about-us.component';
 
 
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
+
     RegisteruserComponent,
     LoginComponent,
     ForgotpassComponent,
@@ -56,7 +62,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
     AdminViewUserComponent,
     AdminViewUserPageComponent,
     AboutUsComponent
-    
+    UserDashboardComponent,
+
     
   ],
   imports: [
